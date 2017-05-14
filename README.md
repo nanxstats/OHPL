@@ -15,7 +15,7 @@ devtools::install_github("road2stat/ohpl")
 Try the examples in `ohpl()`:
 
 ```r
-library("OHPL")
+library("ohpl")
 ?ohpl
 ```
 
