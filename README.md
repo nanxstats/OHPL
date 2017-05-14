@@ -3,6 +3,8 @@
 [![Travis-CI Build Status](https://travis-ci.org/road2stat/ohpl.svg?branch=master)](https://travis-ci.org/road2stat/ohpl)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/road2stat/ohpl?branch=master&svg=true)](https://ci.appveyor.com/project/road2stat/ohpl)
 
+`ohpl` implements the ordered homogeneity pursuit lasso (OHPL) algorithm for group variable selection.
+
 ## Installation
 
 To download and install `ohpl` from GitHub:
