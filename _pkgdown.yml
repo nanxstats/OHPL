@@ -1,0 +1,20 @@
+template:
+  params:
+    bootswatch: flatly
+
+reference:
+  - title: "Fitting OHPL Models"
+    desc: >
+      Functions for fitting OHPL models.
+    contents:
+      - ohpl
+      - cv.ohpl
+      - proto
+      - fop
+      - dlc
+  - title: "Datasets"
+    desc: "Spectroscopic datasets."
+    contents:
+      - beer
+      - wheat
+      - soil
