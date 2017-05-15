@@ -22,3 +22,5 @@ To get started, try the examples in `ohpl()`:
 library("ohpl")
 ?ohpl
 ```
+
+Browse the [documentation here](https://ohpl.io/doc/) for more information.
