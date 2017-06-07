@@ -1,9 +1,10 @@
 Package: ohpl
 Type: Package
 Title: Ordered Homogeneity Pursuit Lasso
-Version: 1.0.9000
-Authors@R: c(person("You-Wu", "Lin", email = "lyw015813@126.com", role = c("aut")),
-             person("Nan", "Xiao", email = "me@nanx.me", role = "cre"))
+Version: 1.1
+Authors@R: c(
+    person("You-Wu", "Lin", email = "lyw015813@126.com", role = c("aut")),
+    person("Nan", "Xiao", email = "me@nanx.me", role = "cre"))
 Maintainer: Nan Xiao <me@nanx.me>
 Description: Ordered Homogeneity Pursuit Lasso (OHPL).
 License: GPL-3 | file LICENSE
