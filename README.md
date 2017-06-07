@@ -12,13 +12,7 @@ in datasets with strongly correlated variables.
 
 ## Installation
 
-To download and install `ohpl` from CRAN:
-
-```r
-install.packages("ohpl")
-```
-
-Or try the development version on GitHub:
+To download and install the `ohpl` package from GitHub:
 
 ```r
 # install.packages("devtools")
