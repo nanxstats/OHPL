@@ -59,7 +59,7 @@ y.cal = y[samp.idx]
 X.test = X[-samp.idx, ]
 y.test = y[-samp.idx]
 
-# this example will run for a while
+# needs to run for a while
 \dontrun{
 cv.fit = cv.ohpl(
   X.cal, y.cal, maxcomp = 6, gamma = seq(0.1, 0.9, 0.1),

@@ -59,10 +59,12 @@ y.cal = y[samp.idx]
 X.test = X[-samp.idx, ]
 y.test = y[-samp.idx]
 
+# needs to run for a while
+\dontrun{
 fit = ohpl(
   X.cal, y.cal, maxcomp = 10, gamma = 0.8,
   X.test, y.test, G = 30, type = "max")
 
-fit$RMSEP
+fit$RMSEP}
 }
 
