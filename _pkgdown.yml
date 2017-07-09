@@ -7,10 +7,10 @@ reference:
     desc: >
       Functions for fitting OHPL models.
     contents:
-      - ohpl
-      - cv.ohpl
+      - OHPL
+      - cv.OHPL
       - proto
-      - fop
+      - FOP
       - dlc
   - title: "Datasets"
     desc: "Spectroscopic datasets."
