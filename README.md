@@ -2,7 +2,7 @@
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Travis-CI Build Status](https://travis-ci.org/road2stat/OHPL.svg?branch=master)](https://travis-ci.org/road2stat/OHPL)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/road2stat/OHPL?branch=master&svg=true)](https://ci.appveyor.com/project/road2stat/OHPL)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/gly6tao7yu6vfq85?svg=true)](https://ci.appveyor.com/project/road2stat/ohpl-8jvmx)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 The R package `OHPL` implements the ordered homogeneity pursuit lasso (OHPL)
