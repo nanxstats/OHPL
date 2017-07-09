@@ -1,6 +1,6 @@
 #' Fisher Optimal Partition
 #'
-#' Fisher optimal partition algorithm.
+#' The Fisher optimal partition algorithm.
 #'
 #' @param X a set of samples
 #' @param k number of classes
@@ -8,7 +8,7 @@
 #'
 #' @return index vector for each sample's classification
 #'
-#' @export fop
+#' @export FOP
 #'
 #' @references
 #' W. D. Fisher (1958). On grouping for maximum homogeneity.
@@ -20,9 +20,9 @@
 #'   9.3, 1.8, 1.9, 1.7, 1.5, 1.3,
 #'   1.4, 2.0, 1.9, 2.3, 2.1))
 #' C = dlc(X, maxk = 8)$C
-#' F = fop(X, 8, C)
+#' F = FOP(X, 8, C)
 
-fop = function(X, k, C) {
+FOP = function(X, k, C) {
 
   n = dim(X)[1]
   if (k == 1) {

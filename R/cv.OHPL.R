@@ -24,7 +24,7 @@
 #' and other evaluation metrics. Also the optimal number
 #' of groups to use in group lasso.
 #'
-#' @export cv.ohpl
+#' @export cv.OHPL
 #'
 #' @examples
 #' data("wheat")
@@ -42,11 +42,11 @@
 #'
 #' # needs to run for a while
 #' \dontrun{
-#' cv.fit = cv.ohpl(
+#' cv.fit = cv.OHPL(
 #'   X.cal, y.cal, maxcomp = 6, gamma = seq(0.1, 0.9, 0.1),
 #'   X.test, y.test, cv.folds = 5, G = 30, type = "max")}
 
-cv.ohpl = function(
+cv.OHPL = function(
   X.cal, y.cal, maxcomp, gamma = seq(0.1, 0.9, 0.1),
   X.test, y.test, cv.folds = 5L,
   G = 30L, type = c("max", "median"),
@@ -67,7 +67,7 @@ cv.ohpl = function(
 
   for (i in 3L:G) {
     for (j in 1L:length(gamma)) {
-      ohpl.model = ohpl(
+      ohpl.model = OHPL(
         X.cal, y.cal, maxcomp, gamma = gamma[j],
         X.test, y.test, cv.folds = cv.folds,
         G = i, type = type,
