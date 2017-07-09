@@ -26,7 +26,7 @@
 #' @return model list
 #'
 #' @importFrom glmnet cv.glmnet
-#' @export ohpl
+#' @export OHPL
 #'
 #' @examples
 #' data("wheat")
@@ -44,13 +44,13 @@
 #'
 #' # needs to run for a while
 #' \dontrun{
-#' fit = ohpl(
+#' fit = OHPL(
 #'   X.cal, y.cal, maxcomp = 10, gamma = 0.8,
 #'   X.test, y.test, G = 30, type = "max")
 #'
 #' fit$RMSEP}
 
-ohpl = function(
+OHPL = function(
   X.cal, y.cal, maxcomp, gamma,
   X.test, y.test, cv.folds = 5L,
   G = 30L, type = c("max", "median"),
@@ -67,7 +67,7 @@ ohpl = function(
 
   # cluster variables with Fisher optimal partitions algorithm
   C = dlc(beta, maxk = G)$C
-  groups = fop(beta, G, C)
+  groups = FOP(beta, G, C)
 
   # extract the prototypes from each group
   prototype = proto(X.cal, y.cal, groups, type = type)
