@@ -40,11 +40,14 @@
 #' X.test = X[-samp.idx, ]
 #' y.test = y[-samp.idx]
 #'
-#' # needs to run for a while
+#' # This needs to run for a while
 #' \dontrun{
 #' cv.fit = cv.OHPL(
-#'   X.cal, y.cal, maxcomp = 6, gamma = seq(0.1, 0.9, 0.1),
-#'   X.test, y.test, cv.folds = 5, G = 30, type = "max")}
+#'   x, y, maxcomp = 6, gamma = seq(0.1, 0.9, 0.1),
+#'   x.test, y.test, cv.folds = 5, G = 30, type = "max")
+#' # the optimal G and gamma
+#' cv.fit$opt.G
+#' cv.fit$opt.gamma}
 
 cv.OHPL = function(
   X.cal, y.cal, maxcomp, gamma = seq(0.1, 0.9, 0.1),
@@ -69,15 +72,17 @@ cv.OHPL = function(
     for (j in 1L:length(gamma)) {
       ohpl.model = OHPL(
         X.cal, y.cal, maxcomp, gamma = gamma[j],
-        X.test, y.test, cv.folds = cv.folds,
+        cv.folds = cv.folds,
         G = i, type = type,
         scale = scale, pls.method = pls.method)
 
-      RMSEP.mat[i - 2, j] = ohpl.model$"RMSEP"
-      Q2.mat[i - 2, j] = ohpl.model$"Q2.test"
+      ohpl.rmsep.res = OHPL.RMSEP(ohpl.model, X.test, y.test)
+
+      RMSEP.mat[i - 2, j] = ohpl.rmsep.res$"RMSEP"
+      Q2.mat[i - 2, j] = ohpl.rmsep.res$"Q2.test"
 
       # each component in the list stores a model
-      L[[(i-3) * length(gamma) + j]] = ohpl.model
+      L[[(i - 3) * length(gamma) + j]] = ohpl.model
       cat("gamma =", gamma[j], "\n")
       # alpha.idx[[j]] = ohpl.model
       # alpha.RMSEP = c(alpha.RMSEP, ohpl.model$RMSEP)
