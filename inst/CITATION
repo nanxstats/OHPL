@@ -1,0 +1,11 @@
+citHeader("To cite the OHPL package in publications, please use:")
+
+citEntry(
+entry="Article",
+title = "Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data",
+journal= "Chemometrics and Intelligent Laboratory Systems",
+year = "2017",
+author = "You-Wu Lin and Nan Xiao and Li-Li Wang and Chuan-Quan Li and Qing-Song Xu",
+doi = "10.1016/j.chemolab.2017.07.004",
+textVersion = "You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu. (2017). Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data. Chemometrics and Intelligent Laboratory Systems."
+)
