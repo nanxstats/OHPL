@@ -23,5 +23,6 @@ Depends:
     R (>= 3.0.2)
 Imports:
     glmnet,
-    pls
+    pls,
+    mvtnorm
 RoxygenNote: 5.0.1

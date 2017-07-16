@@ -1,7 +1,7 @@
 single.beta = function(X, y, maxcomp = NULL) {
 
   if (missing(X) | missing(y)) stop("Please specify both x and y")
-  if (is.null(maxcomp)) maxcomp = min(nrow(X) - 1, ncol(X))
+  if (is.null(maxcomp)) maxcomp = min(nrow(X) - 1L, ncol(X))
 
   plsdf = as.data.frame(cbind(X, "y" = y))
 
@@ -17,7 +17,7 @@ single.beta = function(X, y, maxcomp = NULL) {
     y ~ X, data = plsdf, ncomp = opt.cv,
     scale = TRUE, method = "simpls", validation = "none")
 
-  beta1 = matrix(coef(plsr.fit), ncol = 1)
+  beta1 = matrix(coef(plsr.fit), ncol = 1L)
 
   simplsfit = simpls.fit(X, y, opt.cv)
   beta = coef(simplsfit, ncomp = opt.cv, intercept = FALSE)
