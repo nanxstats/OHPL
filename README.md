@@ -1,18 +1,23 @@
-# Ordered Homogeneity Pursuit Lasso (OHPL)  <a href="https://ohpl.io"><img src="https://i.imgur.com/V8QU7dz.png" align="right" alt="logo" height="180" width="180" /></a>
+# Ordered Homogeneity Pursuit Lasso (OHPL)  <a href="https://ohpl.io"><img src="https://i.imgur.com/8Ei1J8i.png" align="right" alt="logo" height="180" width="180" /></a>
 
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Travis-CI Build Status](https://travis-ci.org/road2stat/OHPL.svg?branch=master)](https://travis-ci.org/road2stat/OHPL)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/gly6tao7yu6vfq85?svg=true)](https://ci.appveyor.com/project/road2stat/ohpl-8jvmx)
-[![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![CRAN Version](https://www.r-pkg.org/badges/version/OHPL)](https://www.r-pkg.org/badges/version/OHPL)
+[![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/OHPL)](https://cranlogs.r-pkg.org/badges/OHPL)
 
-The R package `OHPL` implements the ordered homogeneity pursuit lasso (OHPL)
-algorithm for group variable selection. This method takes the homogeneity
-structure in high-dimensional data into account and is particularly useful
-in datasets with strongly correlated variables.
+## Introduction
+
+`OHPL` implements the ordered homogeneity pursuit lasso (OHPL) algorithm for group variable selection proposed in Lin et al. (2017) <[DOI:10.1016/j.chemolab.2017.07.004](https://doi.org/10.1016/j.chemolab.2017.07.004)>. The OHPL method takes the homogeneity structure in high-dimensional data into account and enjoys the grouping effect to select groups of important variables automatically. This feature makes it particularly useful for high-dimensional datasets with strongly correlated variables, such as spectroscopic data.
 
 ## Installation
 
-To download and install the `OHPL` package from GitHub:
+To download and install `OHPL` from CRAN:
+
+```r
+install.packages("OHPL")
+```
+
+Or try the development version on GitHub:
 
 ```r
 # install.packages("devtools")
@@ -27,3 +32,23 @@ library("OHPL")
 ```
 
 [Browse the package documentation](https://ohpl.io/doc/) for more information.
+
+## Paper Citation
+
+Formatted citation:
+
+You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017). Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data. _Chemometrics and Intelligent Laboratory Systems_. https://doi.org/10.1016/j.chemolab.2017.07.004
+
+BibTeX entry:
+
+```
+@article{Lin2017,
+  title = "Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data",
+  author = "You-Wu Lin and Nan Xiao and Li-Li Wang and Chuan-Quan Li and Qing-Song Xu",
+  journal = "Chemometrics and Intelligent Laboratory Systems",
+  year = "2017",
+  issn = "0169-7439",
+  doi = "https://doi.org/10.1016/j.chemolab.2017.07.004",
+  url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
+}
+```

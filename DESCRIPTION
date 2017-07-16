@@ -1,12 +1,19 @@
 Package: OHPL
 Type: Package
-Title: Ordered Homogeneity Pursuit Lasso
-Version: 1.1.9001
+Title: Ordered Homogeneity Pursuit Lasso for Group Variable Selection
+Version: 1.1.9002
 Authors@R: c(
     person("You-Wu", "Lin", email = "lyw015813@126.com", role = c("aut")),
     person("Nan", "Xiao", email = "me@nanx.me", role = "cre"))
 Maintainer: Nan Xiao <me@nanx.me>
-Description: Ordered Homogeneity Pursuit Lasso (OHPL).
+Description: OHPL implements the ordered homogeneity pursuit lasso (OHPL)
+    algorithm for group variable selection proposed in Lin et al. (2017)
+    <DOI:10.1016/j.chemolab.2017.07.004>. The OHPL method takes the
+    homogeneity structure in high-dimensional data into account and
+    enjoys the grouping effect to select groups of important variables
+    automatically. This feature makes it particularly useful for
+    high-dimensional datasets with strongly correlated variables,
+    such as spectroscopic data.
 License: GPL-3 | file LICENSE
 URL: https://ohpl.io, https://github.com/road2stat/OHPL
 Encoding: UTF-8
