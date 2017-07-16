@@ -8,12 +8,20 @@ reference:
       Functions for fitting OHPL models.
     contents:
       - OHPL
-      - cv.OHPL
-      - proto
       - FOP
+      - proto
       - dlc
+  - title: "Evaluation of OHPL Models"
+    desc: >
+      Functions for cross-validation, prediction, performance evaluation,
+      and generation of simulated data.
+    contents:
+      - cv.OHPL
+      - predict.OHPL
+      - OHPL.RMSEP
+      - OHPL.sim
   - title: "Datasets"
-    desc: "Spectroscopic datasets."
+    desc: "Real-world spectroscopic datasets used in the paper."
     contents:
       - beer
       - wheat
