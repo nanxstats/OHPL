@@ -6,7 +6,7 @@ Authors@R: c(
     person("You-Wu", "Lin", email = "lyw015813@126.com", role = c("aut")),
     person("Nan", "Xiao", email = "me@nanx.me", role = "cre"))
 Maintainer: Nan Xiao <me@nanx.me>
-Description: OHPL implements the ordered homogeneity pursuit lasso (OHPL)
+Description: Ordered homogeneity pursuit lasso (OHPL)
     algorithm for group variable selection proposed in Lin et al. (2017)
     <DOI:10.1016/j.chemolab.2017.07.004>. The OHPL method takes the
     homogeneity structure in high-dimensional data into account and
