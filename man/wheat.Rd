@@ -3,12 +3,15 @@
 \docType{data}
 \name{wheat}
 \alias{wheat}
-\title{wheat dataset}
+\title{The wheat dataset}
 \usage{
 data(wheat)
 }
 \description{
-wheat dataset
+The wheat dataset contains 100 wheat samples with specified
+protein and moisture content, published by J. Kalivas.
+Samples were measured by diffuse reflectance as log (I/R)
+from 1100 to 2500 nm (701 data points) in 2 nm intervals.
 }
 \examples{
 data("wheat")
@@ -23,5 +26,9 @@ X.cal = X[samp.idx, ]
 y.cal = y[samp.idx]
 X.test = X[-samp.idx, ]
 y.test = y[-samp.idx]
+}
+\references{
+Kalivas, J. H. (1997). Two data sets of near infrared spectra.
+\emph{Chemometrics and Intelligent Laboratory Systems}, 37(2), 255--259.
 }
 

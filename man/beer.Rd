@@ -3,12 +3,14 @@
 \docType{data}
 \name{beer}
 \alias{beer}
-\title{beer dataset}
+\title{The beer dataset}
 \usage{
 data(beer)
 }
 \description{
-beer dataset
+The beer dataset contains 60 samples published by Norgaard et al.
+Recorded with a 30mm quartz cell on the undiluted degassed beer
+and measured from 1100 to 2250 nm (576 data points) in steps of 2 nm.
 }
 \examples{
 data("beer")
@@ -31,5 +33,11 @@ X.cal = X[samp.idx, ]
 y.cal = y[samp.idx]
 X.test = X[-samp.idx, ]
 y.test = y[-samp.idx]
+}
+\references{
+Norgaard, L., Saudland, A., Wagner, J., Nielsen, J. P., Munck, L., &
+Engelsen, S. B. (2000). Interval partial least-squares regression (iPLS):
+a comparative chemometric study with an example from near-infrared
+spectroscopy. \emph{Applied Spectroscopy}, 54(3), 413--419.
 }
 
