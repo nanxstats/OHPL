@@ -24,6 +24,13 @@
 #' @importFrom glmnet cv.glmnet
 #' @export OHPL
 #'
+#' @references
+#' You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017).
+#' Ordered homogeneity pursuit lasso for group variable selection with
+#' applications to spectroscopic data.
+#' \emph{Chemometrics and Intelligent Laboratory Systems}.
+#' \url{https://doi.org/10.1016/j.chemolab.2017.07.004}
+#'
 #' @examples
 #' # generate simulation data
 #' dat = OHPL.sim(
