@@ -2,8 +2,8 @@
 
 [![Travis-CI Build Status](https://travis-ci.org/road2stat/OHPL.svg?branch=master)](https://travis-ci.org/road2stat/OHPL)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/gly6tao7yu6vfq85?svg=true)](https://ci.appveyor.com/project/road2stat/ohpl-8jvmx)
-[![CRAN Version](https://www.r-pkg.org/badges/version/OHPL)](https://www.r-pkg.org/badges/version/OHPL)
-[![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/OHPL)](https://cranlogs.r-pkg.org/badges/OHPL)
+[![CRAN Version](https://www.r-pkg.org/badges/version/OHPL)](https://cran.r-project.org/package=OHPL)
+[![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/OHPL)](https://cran.r-project.org/package=OHPL)
 
 ## Introduction
 
