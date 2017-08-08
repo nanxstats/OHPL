@@ -5,7 +5,9 @@ entry="Article",
 title = "Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data",
 journal= "Chemometrics and Intelligent Laboratory Systems",
 year = "2017",
+volume = "168",
+pages = "62--71",
 author = "You-Wu Lin and Nan Xiao and Li-Li Wang and Chuan-Quan Li and Qing-Song Xu",
 doi = "10.1016/j.chemolab.2017.07.004",
-textVersion = "You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu. (2017). Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data. Chemometrics and Intelligent Laboratory Systems."
+textVersion = "You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu. (2017). Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data. Chemometrics and Intelligent Laboratory Systems 168, 62-71. https://doi.org/10.1016/j.chemolab.2017.07.004"
 )

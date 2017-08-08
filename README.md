@@ -7,7 +7,7 @@
 
 ## Introduction
 
-`OHPL` implements the ordered homogeneity pursuit lasso (OHPL) algorithm for group variable selection proposed in Lin et al. (2017) <[DOI:10.1016/j.chemolab.2017.07.004](https://doi.org/10.1016/j.chemolab.2017.07.004)>. The OHPL method takes the homogeneity structure in high-dimensional data into account and enjoys the grouping effect to select groups of important variables automatically. This feature makes it particularly useful for high-dimensional datasets with strongly correlated variables, such as spectroscopic data.
+`OHPL` implements the ordered homogeneity pursuit lasso (OHPL) algorithm for group variable selection proposed in Lin et al. (2017) <[DOI:10.1016/j.chemolab.2017.07.004](https://doi.org/10.1016/j.chemolab.2017.07.004)> ([PDF](https://nanx.me/papers/OHPL.pdf)). The OHPL method exploits the homogeneity structure in high-dimensional data and enjoys the grouping effect to select groups of important variables automatically. This feature makes it particularly useful for high-dimensional datasets with strongly correlated variables, such as spectroscopic data.
 
 ## Installation
 
@@ -37,7 +37,7 @@ library("OHPL")
 
 Formatted citation:
 
-You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017). Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data. _Chemometrics and Intelligent Laboratory Systems_. https://doi.org/10.1016/j.chemolab.2017.07.004
+You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017). Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data. _Chemometrics and Intelligent Laboratory Systems_ 168, 62-71. https://doi.org/10.1016/j.chemolab.2017.07.004
 
 BibTeX entry:
 
@@ -47,6 +47,8 @@ BibTeX entry:
   author = "You-Wu Lin and Nan Xiao and Li-Li Wang and Chuan-Quan Li and Qing-Song Xu",
   journal = "Chemometrics and Intelligent Laboratory Systems",
   year = "2017",
+  volume = "168",
+  pages = "62--71",
   issn = "0169-7439",
   doi = "https://doi.org/10.1016/j.chemolab.2017.07.004",
   url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
