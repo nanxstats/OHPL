@@ -45,4 +45,3 @@ fit = OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
 y.pred = predict(fit, x.test)
 y.pred
 }
-

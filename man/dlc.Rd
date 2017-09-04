@@ -18,4 +18,3 @@ Fisher optimal partitions algorithm
 \description{
 Compute D, L, and C in Fisher Optimal Partitions Algorithm
 }
-

@@ -71,4 +71,3 @@ applications to spectroscopic data.
 \emph{Chemometrics and Intelligent Laboratory Systems} 168, 62-71.
 \url{https://doi.org/10.1016/j.chemolab.2017.07.004}
 }
-

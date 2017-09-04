@@ -68,4 +68,3 @@ cv.fit = cv.OHPL(
 cv.fit$opt.G
 cv.fit$opt.gamma}
 }
-

@@ -31,4 +31,3 @@ y.test = y[-samp.idx]
 Kalivas, J. H. (1997). Two data sets of near infrared spectra.
 \emph{Chemometrics and Intelligent Laboratory Systems}, 37(2), 255--259.
 }
-

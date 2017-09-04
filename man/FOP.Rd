@@ -31,4 +31,3 @@ W. D. Fisher (1958). On grouping for maximum homogeneity.
 \emph{Journal of the American Statistical Association},
 vol. 53, pp. 789--798.
 }
-

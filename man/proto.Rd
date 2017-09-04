@@ -31,4 +31,3 @@ from each group (cluster).
 \description{
 This function extracts the prototype from each variable group.
 }
-

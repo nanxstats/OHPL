@@ -32,4 +32,3 @@ reflectance (NIR) and fluorescence spectroscopy to analysis of
 microbiological and chemical properties of arctic soil.
 \emph{Soil biology and Biochemistry}, 39(7), 1664--1673.
 }
-

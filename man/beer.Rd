@@ -40,4 +40,3 @@ Engelsen, S. B. (2000). Interval partial least-squares regression (iPLS):
 a comparative chemometric study with an example from near-infrared
 spectroscopy. \emph{Applied Spectroscopy}, 54(3), 413--419.
 }
-
