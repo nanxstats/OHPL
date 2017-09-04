@@ -1,7 +1,7 @@
 Package: OHPL
 Type: Package
 Title: Ordered Homogeneity Pursuit Lasso for Group Variable Selection
-Version: 1.3
+Version: 1.3.9000
 Authors@R: c(
     person("You-Wu", "Lin", email = "lyw015813@126.com", role = c("aut")),
     person("Nan", "Xiao", email = "me@nanx.me", role = "cre"))
@@ -25,4 +25,4 @@ Imports:
     glmnet,
     pls,
     mvtnorm
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
