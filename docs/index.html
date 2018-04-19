@@ -1,0 +1,301 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Ordered Homogeneity Pursuit Lasso (OHPL) is a variable selection method designed for high-dimensional data with strongly correlated variables.">
+    <meta name="keywords" content="homogeneity pursuit,group variable selection,variable clustering,partial least squares,grouping effect">
+    <meta name="author" content="Nan Xiao">
+
+    <title>OHPL: Ordered Homogeneity Pursuit Lasso</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="title-header">
+            Ordered Homogeneity Pursuit Lasso for Group Variable Selection with Applications to Spectroscopic Data
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-9 no-pad">
+            <div class="authors">
+                You-Wu Lin<sup>1,2</sup>,
+                <a target="_blank" href="https://nanx.me/">Nan Xiao</a><sup>2,3</sup>,
+                <a target="_blank" href="https://www.researchgate.net/profile/Li_Li_Wang2">Li-Li Wang</a><sup>2</sup>,
+                <a target="_blank" href="https://www.researchgate.net/profile/Chuanquan_Li">Chuan-Quan Li</a><sup>2</sup>,
+                <a target="_blank" href="https://scholar.google.com/citations?user=b98MXiYAAAAJ&hl=en">Qing-Song Xu</a><sup>2,*</sup>
+            </div>
+            <div class="affiliations">
+                <sup>1</sup>School of Mathematics and Statistics, Guangxi Teachers Education University, Nanning 530023, China<br>
+                <sup>2</sup>School of Mathematics and Statistics, Central South University, Changsha 410083, China<br>
+                <sup>3</sup>Seven Bridges Genomics, 1 Main Street, Cambridge, MA 02142, USA<br>
+                <sup>*</sup>Corresponding author. E-mail: <a href="mailto:qsxu@csu.edu.cn">qsxu@csu.edu.cn</a>
+            </div>
+        </div>
+        <div class="col-lg-3 text-right logos">
+            <img class="logo-image" src="images/csu-logo.png">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 no-pad">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="section-header">Abstract</div>
+    </div>
+
+    <div class="row">
+        <p>In high-dimensional data modeling, variable selection methods have been a popular choice
+            to improve the prediction accuracy by effectively selecting the subset of informative
+            variables, and such methods can enhance the model interpretability with sparse representation.
+            In this study, we propose a novel group variable selection method named ordered homogeneity
+            pursuit lasso (OHPL) that takes the homogeneity structure in high-dimensional data into account.
+            OHPL is particularly useful in high-dimensional datasets with strongly correlated variables.
+            We illustrate the approach using three real-world spectroscopic datasets and compare it with
+            four state-of-the-art variable selection methods. The benchmark results on real-world data
+            show that the proposed method is capable of identifying a small number of influential groups
+            and has better prediction performance than its competitors.
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 no-pad">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-5">
+            <h2 class="section-header">Downloads</h2>
+            <ul>
+                <li>Download the <a href="https://www.sciencedirect.com/science/article/pii/S0169743917300503" target="_blank">paper online here</a></li>
+                <li>Download the <a href="https://nanx.me/papers/OHPL.pdf" target="_blank">paper PDF here</a></li>
+                <li>Download the <a target="_blank" href="https://doi.org/10.6084/m9.figshare.5480416.v1">datasets here</a></li>
+                <li>View the <a target="_blank" href="doc/">software documentation here</a></li>
+            </ul>
+
+            <hr>
+
+            <h2 class="section-header">Software</h2>
+            <p>Install the R package OHPL from <a target="_blank" href="https://cran.r-project.org/package=OHPL">CRAN</a>:</p>
+            <div class="card cite">
+                <div class="card-block">
+                    <pre style="font-size:14px;">install.packages("OHPL")</pre>
+                </div>
+            </div>
+            <p>Or, install the latest development version from <a target="_blank" href="https://github.com/road2stat/OHPL">GitHub</a>:</p>
+            <div class="card cite">
+                <div class="card-block">
+                    <pre style="font-size:14px;">devtools::install_github("road2stat/OHPL")</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <h2 class="section-header">Citation</h2>
+            <p>You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017).
+                Ordered homogeneity pursuit lasso for group variable selection with applications to
+                spectroscopic data. <em>Chemometrics and Intelligent Laboratory Systems</em> 168, 62-71.
+                https://doi.org/10.1016/j.chemolab.2017.07.004
+            </p>
+
+            <hr>
+
+            <h2 class="section-header">BibTeX</h2>
+            <div class="card cite">
+                <div class="card-block">
+            <pre style="font-size:11px;">@article{Lin2017,
+title = "Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data",
+author = "You-Wu Lin and Nan Xiao and Li-Li Wang and Chuan-Quan Li and Qing-Song Xu",
+journal = "Chemometrics and Intelligent Laboratory Systems",
+year = "2017",
+volume = "168",
+pages = "62--71",
+issn = "0169-7439",
+doi = "https://doi.org/10.1016/j.chemolab.2017.07.004",
+url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
+}
+</pre>
+                </div></div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 no-pad">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2 class="section-header">Datasets</h2>
+    </div>
+
+    <div class="row vspace-top">
+        <div class="col-lg-2">
+            <img class="rounded img-fluid" src="images/data-beer.jpg">
+        </div>
+        <div class="col-lg-10">
+            <p>The <strong>beer</strong> dataset contains 60 samples published by
+                <a href="https://doi.org/10.1366/0003702001949500" target="_blank">Norgaard et al.</a> Recorded with a
+                30mm quartz cell on the undiluted degassed beer and measured from 1100 to 2250 nm
+                (576 data points) in steps of 2 nm. Original extract concentration which illustrates the substrate
+                potential for the yeast to ferment alcohol is the property of interest.
+                [<a href="https://github.com/road2stat/OHPL/raw/master/data/beer.rda">Download</a>]</p>
+        </div>
+    </div>
+
+    <div class="row vspace-top">
+        <div class="col-lg-2">
+            <img class="rounded img-fluid" src="images/data-wheat.jpg">
+        </div>
+        <div class="col-lg-10">
+            <p>The <strong>wheat</strong> dataset contains 100 wheat samples with specified protein and moisture content, published
+                by <a href="https://doi.org/10.1016/S0169-7439(97)00038-5" target="_blank">J. Kalivas</a>.
+                Samples were measured by diffuse reflectance as log (I/R) from 1100 to 2500 nm (701 data points)
+                in 2 nm intervals. The protein of wheat is used as the property of interest in our study.
+                [<a href="https://github.com/road2stat/OHPL/raw/master/data/wheat.rda">Download</a>]</p>
+        </div>
+    </div>
+
+    <div class="row vspace-top">
+        <div class="col-lg-2">
+            <img class="rounded img-fluid" src="images/data-soil.jpg">
+        </div>
+        <div class="col-lg-10">
+            <p>The <strong>soil</strong> dataset contains 108 sample measurements from the wavelength range of 400–2500 nm
+                (visible and near infrared spectrum) published by
+                <a href="https://doi.org/10.1016/j.soilbio.2007.01.022" target="_blank">Rinnan et al.</a>
+                We chose 1100-2500 nm range of NIR (700 data points) as the design matrix.
+                Soil organic matter (SOM) is considered as the property of interest.
+                [<a href="https://github.com/road2stat/OHPL/raw/master/data/soil.rda">Download</a>]</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 no-pad">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2 class="section-header">The OHPL Algorithm</h2>
+    </div>
+
+    <div class="row vspace-top">
+        <div class="col-lg-12">
+            <img class="img-fluid" src="images/ohpl-flowchart.png">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 no-pad">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2 class="section-header">Spectroscopic Data Analysis</h2>
+    </div>
+
+    <p></p>
+
+    <div class="row">
+        <h3>The beer dataset</h3>
+    </div>
+
+    <div class="row vspace-top">
+        <div class="col-lg-6">
+            <img class="img-responsive img-thumbnail" src="images/ohpl-beer.png">
+        </div>
+        <div class="col-lg-6">
+            <p>This figure shows the original NIR spectra and the variables selected by different
+                methods for the beer dataset. Fused lasso and Sparse PLS tend to select
+                a larger number of variables, while the nVAR obtained by OHPL, elastic net, and lasso
+                are lower. The group selected by OHPL is the region of 1172-1352 nm,
+                which corresponds to the first overtone of O-H stretching bond vibration.</p>
+        </div>
+    </div>
+
+    <p></p>
+
+    <div class="row">
+        <h3>The wheat dataset</h3>
+    </div>
+
+    <div class="row vspace-top">
+        <div class="col-lg-6">
+            <img class="img-responsive img-thumbnail" src="images/ohpl-wheat.png">
+        </div>
+        <div class="col-lg-6">
+            <p>This figure displays the original NIR spectra and the variables selected by the five methods
+                for the wheat dataset. The variables selected by OHPL are located in the region
+                1100-1300 nm. The selected informative intervals are distributed in
+                a broad region, which, is implicitly in accordance with the complex structure characteristics
+                of protein. This wide region contains the third overtones of C-H groups (850-865 nm), the
+                second overtones of C-H groups (near 888 nm), the second overtones of O-H groups (972-988 nm),
+                the second overtones of N-H groups (near 1012 nm) , and the interactions between them.</p>
+        </div>
+    </div>
+
+    <p></p>
+
+    <div class="row">
+        <h3>The soil dataset</h3>
+    </div>
+
+    <div class="row vspace-top">
+        <div class="col-lg-6">
+            <img class="img-responsive img-thumbnail" src="images/ohpl-soil.png">
+        </div>
+        <div class="col-lg-6">
+            <p>This figure shows the original NIR spectra and the wavelength selection results by the five
+                methods for the soil dataset. The informative spectra regions are near 1420 nm (region 1),
+                1900-1950 nm (region 2), 2040-2260 nm (region 3), and 2440-2460nm (region 4). Lasso and
+                elastic net failed to select the informative wavelength region 1 and region 3. OHPL selected
+                the regions near 1420-1554 nm, 1686-2086 nm, 2264-2302 nm, 2324-2354 nm, and 2460-2500 nm.
+                All the selected regions correspond to the chemical bond except the region of 2324-2354 nm.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 no-pad">
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <p align="center" class="funding">
+            This work is financially supported by the National Natural Science Foundation of China,
+            the Mathematics and Interdisciplinary Sciences Project,
+            and the Innovation Program of Central South University.
+        </p>
+    </div>
+
+</div>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-99125990-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>

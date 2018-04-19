@@ -1,3 +1,5 @@
+destination: "docs/doc/"
+
 template:
   params:
     bootswatch: flatly
@@ -11,6 +13,7 @@ reference:
       - FOP
       - proto
       - dlc
+      - OHPL-package
   - title: "Evaluation of OHPL Models"
     desc: >
       Functions for cross-validation, prediction, performance evaluation,
