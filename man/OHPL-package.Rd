@@ -15,9 +15,10 @@ useful for high-dimensional datasets with strongly correlated variables,
 such as spectroscopic data.
 }
 \details{
-\tabular{ll}{Package: \tab OHPL\cr
+\tabular{ll}{
+Package: \tab OHPL\cr
 Type: \tab Package\cr
-License: \tab GPL-3\cr }
+License: \tab GPL-3}
 }
 \references{
 You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017).
