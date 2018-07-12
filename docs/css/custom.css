@@ -1,15 +1,15 @@
 /* link color */
 
+a {
+    color: #007bff !important;
+}
+
 a:active {
-    color: rgb(51, 122, 183) !important;
+    color: #007bff !important;
 }
 
 a:hover {
-    color: rgb(35, 82, 124) !important;
-}
-
-a {
-    color: rgb(51, 122, 183) !important;
+    color: #0056b3 !important;
 }
 
 body {
