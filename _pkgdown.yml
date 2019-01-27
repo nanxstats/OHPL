@@ -1,9 +1,5 @@
 destination: "docs/doc/"
 
-template:
-  params:
-    bootswatch: flatly
-
 reference:
   - title: "Fitting OHPL Models"
     desc: >
