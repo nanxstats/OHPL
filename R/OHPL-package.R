@@ -9,11 +9,6 @@
 #' useful for high-dimensional datasets with strongly correlated variables,
 #' such as spectroscopic data.
 #'
-#' \tabular{ll}{
-#' Package: \tab OHPL\cr
-#' Type: \tab Package\cr
-#' License: \tab GPL-3}
-#'
 #' @name OHPL-package
 #' @docType package
 #'

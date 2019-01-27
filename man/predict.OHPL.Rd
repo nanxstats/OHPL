@@ -4,7 +4,8 @@
 \alias{predict.OHPL}
 \title{Make Predictions Based on the Fitted OHPL Model}
 \usage{
-\method{predict}{OHPL}(object, newx, ncomp = NULL, type = "response", ...)
+\method{predict}{OHPL}(object, newx, ncomp = NULL, type = "response",
+  ...)
 }
 \arguments{
 \item{object}{An object of class \code{OHPL}
