@@ -1,7 +1,7 @@
 # Ordered Homogeneity Pursuit Lasso (OHPL)  <a href="https://ohpl.io"><img src="https://i.imgur.com/8Ei1J8i.png" align="right" alt="logo" height="180" width="180" /></a>
 
-[![Travis-CI Build Status](https://travis-ci.org/road2stat/OHPL.svg?branch=master)](https://travis-ci.org/road2stat/OHPL)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/gly6tao7yu6vfq85?svg=true)](https://ci.appveyor.com/project/road2stat/ohpl-8jvmx)
+[![Travis-CI Build Status](https://travis-ci.org/nanxstats/OHPL.svg?branch=master)](https://travis-ci.org/nanxstats/OHPL)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/gly6tao7yu6vfq85?svg=true)](https://ci.appveyor.com/project/nanxstats/ohpl-8jvmx)
 [![CRAN Version](https://www.r-pkg.org/badges/version/OHPL)](https://cran.r-project.org/package=OHPL)
 [![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/OHPL)](https://cran.r-project.org/package=OHPL)
 
@@ -43,7 +43,7 @@ Or try the development version on GitHub:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("road2stat/OHPL")
+devtools::install_github("nanxstats/OHPL")
 ```
 
 To get started, try the examples in `OHPL()`:
