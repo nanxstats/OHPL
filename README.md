@@ -1,7 +1,7 @@
 # Ordered Homogeneity Pursuit Lasso (OHPL)  <a href="https://ohpl.io"><img src="https://i.imgur.com/8Ei1J8i.png" align="right" alt="logo" height="180" width="180" /></a>
 
 [![Travis-CI Build Status](https://travis-ci.org/nanxstats/OHPL.svg?branch=master)](https://travis-ci.org/nanxstats/OHPL)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/gly6tao7yu6vfq85?svg=true)](https://ci.appveyor.com/project/nanxstats/ohpl-8jvmx)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/nanxstats/OHPL?branch=master&svg=true)](https://ci.appveyor.com/project/nanxstats/ohpl)
 [![CRAN Version](https://www.r-pkg.org/badges/version/OHPL)](https://cran.r-project.org/package=OHPL)
 [![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/OHPL)](https://cran.r-project.org/package=OHPL)
 
