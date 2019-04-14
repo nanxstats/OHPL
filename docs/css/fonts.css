@@ -1,41 +1,63 @@
-@font-face {
-  font-family: 'Lato';
-  font-weight: 400;
-  font-style: normal;
-  src: url('../fonts/Lato-regular/Lato-regular.eot');
-  src: url('../fonts/Lato-regular/Lato-regular.eot?#iefix') format('embedded-opentype'),
-       local('Lato Regular'),
-       local('Lato-regular'),
-       url('../fonts/Lato-regular/Lato-regular.woff2') format('woff2'),
-       url('../fonts/Lato-regular/Lato-regular.woff') format('woff'),
-       url('../fonts/Lato-regular/Lato-regular.ttf') format('truetype'),
-       url('../fonts/Lato-regular/Lato-regular.svg#Lato') format('svg');
-}
+/* lora-regular - latin */
 
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lora-v13-latin-regular.eot');
+  /* IE9 Compat Modes */
+  src: local('Lora Regular'), local('Lora-Regular'), url('../fonts/lora-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/lora-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/lora-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/lora-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/lora-v13-latin-regular.svg#Lora') format('svg');
+  /* Legacy iOS */
+}
+
+/* lora-700 - latin */
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
   font-weight: 700;
-  font-style: normal;
-  src: url('../fonts/Lato-700/Lato-700.eot');
-  src: url('../fonts/Lato-700/Lato-700.eot?#iefix') format('embedded-opentype'),
-       local('Lato Bold'),
-       local('Lato-700'),
-       url('../fonts/Lato-700/Lato-700.woff2') format('woff2'),
-       url('../fonts/Lato-700/Lato-700.woff') format('woff'),
-       url('../fonts/Lato-700/Lato-700.ttf') format('truetype'),
-       url('../fonts/Lato-700/Lato-700.svg#Lato') format('svg');
+  src: url('../fonts/lora-v13-latin-700.eot');
+  /* IE9 Compat Modes */
+  src: local('Lora Bold'), local('Lora-Bold'), url('../fonts/lora-v13-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/lora-v13-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/lora-v13-latin-700.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/lora-v13-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/lora-v13-latin-700.svg#Lora') format('svg');
+  /* Legacy iOS */
 }
 
+/* lora-italic - latin */
+
 @font-face {
-  font-family: 'Lato';
-  font-weight: 400;
+  font-family: 'Lora';
   font-style: italic;
-  src: url('../fonts/Lato-italic/Lato-italic.eot');
-  src: url('../fonts/Lato-italic/Lato-italic.eot?#iefix') format('embedded-opentype'),
-       local('Lato Italic'),
-       local('Lato-italic'),
-       url('../fonts/Lato-italic/Lato-italic.woff2') format('woff2'),
-       url('../fonts/Lato-italic/Lato-italic.woff') format('woff'),
-       url('../fonts/Lato-italic/Lato-italic.ttf') format('truetype'),
-       url('../fonts/Lato-italic/Lato-italic.svg#Lato') format('svg');
+  font-weight: 400;
+  src: url('../fonts/lora-v13-latin-italic.eot');
+  /* IE9 Compat Modes */
+  src: local('Lora Italic'), local('Lora-Italic'), url('../fonts/lora-v13-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/lora-v13-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/lora-v13-latin-italic.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/lora-v13-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/lora-v13-latin-italic.svg#Lora') format('svg');
+  /* Legacy iOS */
+}
+
+/* source-sans-pro-regular - latin */
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/source-sans-pro-v12-latin-regular.eot');
+  /* IE9 Compat Modes */
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url('../fonts/source-sans-pro-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/source-sans-pro-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/source-sans-pro-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/source-sans-pro-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/source-sans-pro-v12-latin-regular.svg#SourceSansPro') format('svg');
+  /* Legacy iOS */
 }

@@ -1,4 +1,16 @@
-/* link color */
+body {
+    font-family: "Lora", Palatino, Times, "Times New Roman", serif;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.row p, .row ul {
+    font-size: 1.0625rem;
+    line-height: 1.875rem;
+    margin-top: 1rem;
+}
 
 a {
     color: #007bff !important;
@@ -12,27 +24,33 @@ a:hover {
     color: #0056b3 !important;
 }
 
-.container {
-    max-width: 960px;
-}
-
 hr {
     border-top: .08rem solid #CCCCCC;
 }
 
 .title-header {
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 1.875rem;
+    font-weight: 400;
 }
 
 .section-header {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 700;
+}
+
+.authors, .affiliation {
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-size: 0.975rem;
 }
 
 .authors {
-    font-size: 1.25rem;
     margin-bottom: 0.8rem;
+}
+
+.cite-text {
+    font-size: 0.9rem;
+    line-height: 1.9rem;
+    padding-top: 0.5rem;
 }
 
 .cite {
@@ -41,14 +59,6 @@ hr {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 0rem;
-}
-
-.row p {
-    margin-top: 1rem;
-}
-
-.row ul {
-    margin-top: 1rem;
 }
 
 .funding {

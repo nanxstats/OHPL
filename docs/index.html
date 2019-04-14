@@ -3,13 +3,16 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="Ordered Homogeneity Pursuit Lasso (OHPL) is a variable selection method designed for high-dimensional data with strongly correlated variables.">
-    <meta name="keywords" content="homogeneity pursuit,group variable selection,variable clustering,partial least squares,grouping effect">
+    <meta name="description"
+        content="Ordered Homogeneity Pursuit Lasso (OHPL) is a variable selection method designed for high-dimensional data with strongly correlated variables.">
+    <meta name="keywords"
+        content="homogeneity pursuit,group variable selection,variable clustering,partial least squares,grouping effect">
     <meta name="author" content="Nan Xiao">
 
     <title>OHPL: Ordered Homogeneity Pursuit Lasso</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -32,14 +35,18 @@
                 <div class="authors">
                     You-Wu Lin<sup>1,2</sup>,
                     <a target="_blank" href="https://nanx.me/">Nan Xiao</a><sup>2,3</sup>,
-                    <a target="_blank" href="https://www.researchgate.net/profile/Li_Li_Wang2">Li-Li Wang</a><sup>2</sup>,
-                    <a target="_blank" href="https://www.researchgate.net/profile/Chuanquan_Li">Chuan-Quan Li</a><sup>2</sup>,
-                    <a target="_blank" href="https://scholar.google.com/citations?user=b98MXiYAAAAJ&hl=en">Qing-Song Xu</a><sup>2,*</sup>
+                    <a target="_blank" href="https://www.researchgate.net/profile/Li_Li_Wang2">Li-Li
+                        Wang</a><sup>2</sup>,
+                    <a target="_blank" href="https://www.researchgate.net/profile/Chuanquan_Li">Chuan-Quan
+                        Li</a><sup>2</sup>,
+                    <a target="_blank" href="https://scholar.google.com/citations?user=b98MXiYAAAAJ&hl=en">Qing-Song
+                        Xu</a><sup>2,*</sup>
                 </div>
-                <div>
+                <div class="affiliation">
                     <sup>1</sup>School of Mathematics and Statistics, Guangxi Teachers Education University, Nanning
                     530023, China<br>
-                    <sup>2</sup>School of Mathematics and Statistics, Central South University, Changsha 410083, China<br>
+                    <sup>2</sup>School of Mathematics and Statistics, Central South University, Changsha 410083,
+                    China<br>
                     <sup>3</sup>Seven Bridges Genomics, 1 Main Street, Cambridge, MA 02142, USA<br>
                     <sup>*</sup>Corresponding author. E-mail: <a href="mailto:qsxu@csu.edu.cn">qsxu@csu.edu.cn</a>
                 </div>
@@ -99,34 +106,36 @@
                 <hr>
 
                 <h2 class="section-header">Software</h2>
-                <p>Install the R package OHPL from <a target="_blank" href="https://cran.r-project.org/package=OHPL">CRAN</a>:</p>
+                <p>Install the R package OHPL from <a target="_blank"
+                        href="https://cran.r-project.org/package=OHPL">CRAN</a>:</p>
                 <div class="card cite">
                     <div class="card-block">
                         <pre><code>install.packages("OHPL")</code></pre>
                     </div>
                 </div>
-                <p>Or, install the latest development version from <a target="_blank" href="https://github.com/nanxstats/OHPL">GitHub</a>:</p>
+                <p>Or, the latest version from <a target="_blank" href="https://github.com/nanxstats/OHPL">GitHub</a>:
+                </p>
                 <div class="card cite">
                     <div class="card-block">
-                        <pre><code>devtools::install_github("nanxstats/OHPL")</code></pre>
+                        <pre style="font-size:12px;"><code>devtools::install_github("nanxstats/OHPL")</code></pre>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-7">
                 <h2 class="section-header">Citation</h2>
-                <p>You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017).
+                <div class="cite-text">You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017).
                     Ordered homogeneity pursuit lasso for group variable selection with applications to
                     spectroscopic data. <em>Chemometrics and Intelligent Laboratory Systems</em> 168, 62-71.
                     https://doi.org/10.1016/j.chemolab.2017.07.004
-                </p>
+                </div>
 
                 <hr>
 
                 <h2 class="section-header d-none d-md-block">BibTeX</h2>
                 <div class="card cite d-none d-md-block">
                     <div class="card-block">
-                        <pre style="font-size:11px;"><code>@article{Lin2017,
+                        <pre style="font-size:12px;"><code>@article{Lin2017,
 title = "Ordered homogeneity pursuit lasso for group variable selection with applications to spectroscopic data",
 author = "You-Wu Lin and Nan Xiao and Li-Li Wang and Chuan-Quan Li and Qing-Song Xu",
 journal = "Chemometrics and Intelligent Laboratory Systems",
@@ -157,10 +166,10 @@ url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
         </div>
 
         <div class="row my-4">
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <img class="rounded img-fluid" src="images/data-beer.jpg" alt="beer dataset">
             </div>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <p>The <strong>beer</strong> dataset contains 60 samples published by
                     <a href="https://doi.org/10.1366/0003702001949500" target="_blank">Norgaard et al.</a> Recorded
                     with a
@@ -172,10 +181,10 @@ url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
         </div>
 
         <div class="row my-4">
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <img class="rounded img-fluid" src="images/data-wheat.jpg" alt="wheat dataset">
             </div>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <p>The <strong>wheat</strong> dataset contains 100 wheat samples with specified protein and moisture
                     content, published
                     by <a href="https://doi.org/10.1016/S0169-7439(97)00038-5" target="_blank">J. Kalivas</a>.
@@ -186,10 +195,10 @@ url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
         </div>
 
         <div class="row my-4">
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <img class="rounded img-fluid" src="images/data-soil.jpg" alt="soil dataset">
             </div>
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <p>The <strong>soil</strong> dataset contains 108 sample measurements from the wavelength range of
                     400–2500 nm
                     (visible and near infrared spectrum) published by
@@ -214,7 +223,8 @@ url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
 
         <div class="row my-4">
             <div class="col">
-                <img class="img-fluid" alt="Flowchart of the OHPL algorithm" src="images/ohpl-flowchart.png" alt="ohpl algorithm flowchart">
+                <img class="img-fluid" alt="Flowchart of the OHPL algorithm" src="images/ohpl-flowchart.png"
+                    alt="ohpl algorithm flowchart">
             </div>
         </div>
 
@@ -237,10 +247,10 @@ url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
         </div>
 
         <div class="row my-4">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <img class="img-fluid img-thumbnail" src="images/ohpl-beer.png" alt="ohpl on beer dataset">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <p>This figure shows the original NIR spectra and the variables selected by different
                     methods for the beer dataset. Fused lasso and Sparse PLS tend to select
                     a larger number of variables, while the nVAR obtained by OHPL, elastic net, and lasso
@@ -256,10 +266,10 @@ url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
         </div>
 
         <div class="row my-4">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <img class="img-fluid img-thumbnail" src="images/ohpl-wheat.png" alt="ohpl on wheat dataset">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <p>This figure displays the original NIR spectra and the variables selected by the five methods
                     for the wheat dataset. The variables selected by OHPL are located in the region
                     1100-1300 nm. The selected informative intervals are distributed in
@@ -277,10 +287,10 @@ url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
         </div>
 
         <div class="row my-4">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <img class="img-fluid img-thumbnail" src="images/ohpl-soil.png" alt="ohpl on soil dataset">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <p>This figure shows the original NIR spectra and the wavelength selection results by the five
                     methods for the soil dataset. The informative spectra regions are near 1420 nm (region 1),
                     1900-1950 nm (region 2), 2040-2260 nm (region 3), and 2440-2460nm (region 4). Lasso and
@@ -298,11 +308,11 @@ url = "http://www.sciencedirect.com/science/article/pii/S0169743917300503"
 
         <div class="row">
             <div class="col">
-                <p class="funding text-center">
+                <div class="funding text-center">
                     This work is financially supported by the National Natural Science Foundation of China,
                     the Mathematics and Interdisciplinary Sciences Project,
                     and the Innovation Program of Central South University.
-                </p>
+                </div>
             </div>
         </div>
 
