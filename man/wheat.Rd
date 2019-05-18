@@ -16,16 +16,16 @@ from 1100 to 2500 nm (701 data points) in 2 nm intervals.
 \examples{
 data("wheat")
 
-X = wheat$x
-y = wheat$protein
-n = nrow(wheat$x)
+X <- wheat$x
+y <- wheat$protein
+n <- nrow(wheat$x)
 
 set.seed(1001)
-samp.idx = sample(1L:n, round(n * 0.7))
-X.cal = X[samp.idx, ]
-y.cal = y[samp.idx]
-X.test = X[-samp.idx, ]
-y.test = y[-samp.idx]
+samp.idx <- sample(1L:n, round(n * 0.7))
+X.cal <- X[samp.idx, ]
+y.cal <- y[samp.idx]
+X.test <- X[-samp.idx, ]
+y.test <- y[-samp.idx]
 }
 \references{
 Kalivas, J. H. (1997). Two data sets of near infrared spectra.

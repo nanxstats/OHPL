@@ -21,34 +21,34 @@
 #'
 #' @examples
 #' # generate simulation data
-#' dat = OHPL.sim(
+#' dat <- OHPL.sim(
 #'   n = 100, p = 100, rho = 0.8,
 #'   coef = rep(1, 10), snr = 3, p.train = 0.5,
-#'   seed = 1010)
+#'   seed = 1010
+#' )
 #'
 #' # split training and test set
-#' x = dat$x.tr
-#' y = dat$y.tr
-#' x.test = dat$x.te
-#' y.test = dat$y.te
+#' x <- dat$x.tr
+#' y <- dat$y.tr
+#' x.test <- dat$x.te
+#' y.test <- dat$y.te
 #'
 #' # fit the OHPL model
-#' fit = OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
+#' fit <- OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
 #' # make predictions
-#' y.pred = predict(fit, x.test)
+#' y.pred <- predict(fit, x.test)
 #' y.pred
-predict.OHPL = function(object, newx, ncomp = NULL, type = "response", ...) {
+predict.OHPL <- function(object, newx, ncomp = NULL, type = "response", ...) {
+  if (!("OHPL" %in% class(object))) stop('object class must be "OHPL"')
 
-  if (!("OHPL" %in% class(object)))
-    stop('object class must be "OHPL"')
+  ncomp <- ifelse(is.null(ncomp), object$"opt.K", ncomp)
 
-  ncomp = ifelse(is.null(ncomp), object$"opt.K", ncomp)
-
-  y.pred = predict(
-    object$"model", newdata = newx[, object$"Vsel"],
-    ncomp = ncomp, type = type)
-  y.pred = as.matrix(y.pred, ncol = 1L)
+  y.pred <- predict(
+    object$"model",
+    newdata = newx[, object$"Vsel"],
+    ncomp = ncomp, type = type
+  )
+  y.pred <- as.matrix(y.pred, ncol = 1L)
 
   y.pred
-
 }

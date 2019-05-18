@@ -2,7 +2,7 @@
 % Please edit documentation in R/dlc.R
 \name{dlc}
 \alias{dlc}
-\title{Compute D, L, and C in Fisher Optimal Partitions Algorithm}
+\title{Compute D, L, and C in the Fisher Optimal Partitions Algorithm}
 \usage{
 dlc(X, maxk)
 }
@@ -12,9 +12,9 @@ dlc(X, maxk)
 \item{maxk}{maximum number of k}
 }
 \value{
-The D, L, and C statistics in
+The D, L, and C statistics in the
 Fisher optimal partitions algorithm
 }
 \description{
-Compute D, L, and C in Fisher Optimal Partitions Algorithm
+Compute D, L, and C in the Fisher Optimal Partitions Algorithm
 }

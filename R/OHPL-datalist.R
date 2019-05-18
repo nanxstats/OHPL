@@ -16,25 +16,25 @@
 #'
 #' @examples
 #' data("beer")
-#' x.cal = beer$xtrain
+#' x.cal <- beer$xtrain
 #' dim(x.cal)
-#' x.test = beer$xtest
+#' x.test <- beer$xtest
 #' dim(x.test)
-#' y.cal = beer$ytrain
+#' y.cal <- beer$ytrain
 #' dim(y.cal)
-#' y.test = beer$ytest
+#' y.test <- beer$ytest
 #' dim(y.test)
 #'
-#' X = rbind(x.cal, x.test)
-#' y = rbind(y.cal, y.test)
-#' n = nrow(y)
+#' X <- rbind(x.cal, x.test)
+#' y <- rbind(y.cal, y.test)
+#' n <- nrow(y)
 #'
 #' set.seed(1001)
-#' samp.idx = sample(1L:n, round(n * 0.7))
-#' X.cal = X[samp.idx, ]
-#' y.cal = y[samp.idx]
-#' X.test = X[-samp.idx, ]
-#' y.test = y[-samp.idx]
+#' samp.idx <- sample(1L:n, round(n * 0.7))
+#' X.cal <- X[samp.idx, ]
+#' y.cal <- y[samp.idx]
+#' X.test <- X[-samp.idx, ]
+#' y.test <- y[-samp.idx]
 NULL
 
 #' The wheat dataset
@@ -55,16 +55,16 @@ NULL
 #' @examples
 #' data("wheat")
 #'
-#' X = wheat$x
-#' y = wheat$protein
-#' n = nrow(wheat$x)
+#' X <- wheat$x
+#' y <- wheat$protein
+#' n <- nrow(wheat$x)
 #'
 #' set.seed(1001)
-#' samp.idx = sample(1L:n, round(n * 0.7))
-#' X.cal = X[samp.idx, ]
-#' y.cal = y[samp.idx]
-#' X.test = X[-samp.idx, ]
-#' y.test = y[-samp.idx]
+#' samp.idx <- sample(1L:n, round(n * 0.7))
+#' X.cal <- X[samp.idx, ]
+#' y.cal <- y[samp.idx]
+#' X.test <- X[-samp.idx, ]
+#' y.test <- y[-samp.idx]
 NULL
 
 #' The soil dataset
@@ -86,14 +86,14 @@ NULL
 #' @examples
 #' data("soil")
 #'
-#' X = soil$x
-#' y = soil$som
-#' n = nrow(soil$x)
+#' X <- soil$x
+#' y <- soil$som
+#' n <- nrow(soil$x)
 #'
 #' set.seed(1001)
-#' samp.idx = sample(1L:n, round(n * 0.7))
-#' X.cal = X[samp.idx, ]
-#' y.cal = y[samp.idx]
-#' X.test = X[-samp.idx, ]
-#' y.test = y[-samp.idx]
+#' samp.idx <- sample(1L:n, round(n * 0.7))
+#' X.cal <- X[samp.idx, ]
+#' y.cal <- y[samp.idx]
+#' X.test <- X[-samp.idx, ]
+#' y.test <- y[-samp.idx]
 NULL

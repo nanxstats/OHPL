@@ -14,46 +14,50 @@
 #'
 #' @examples
 #' # generate simulation data
-#' dat = OHPL.sim(
+#' dat <- OHPL.sim(
 #'   n = 100, p = 100, rho = 0.8,
 #'   coef = rep(1, 10), snr = 3, p.train = 0.5,
-#'   seed = 1010)
+#'   seed = 1010
+#' )
 #'
 #' # split training and test set
-#' x = dat$x.tr
-#' y = dat$y.tr
-#' x.test = dat$x.te
-#' y.test = dat$y.te
+#' x <- dat$x.tr
+#' y <- dat$y.tr
+#' x.test <- dat$x.te
+#' y.test <- dat$y.te
 #'
 #' # fit the OHPL model
-#' fit = OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
+#' fit <- OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
+#'
 #' # compute evaluation metric RMSEP, Q2 and MAE for the test set
-#' perf = OHPL.RMSEP(fit, x.test, y.test)
+#' perf <- OHPL.RMSEP(fit, x.test, y.test)
 #' perf$RMSEP
 #' perf$Q2
 #' perf$MAE
-OHPL.RMSEP = function(object, newx, newy) {
+OHPL.RMSEP <- function(object, newx, newy) {
 
   # make predictions based on the fitted OHPL model
-  y.pred = predict(
-    object, newx = newx,
-    ncomp = object$"opt.K", type = "response")
-  y.pred = as.matrix(y.pred, ncol = 1L)
+  y.pred <- predict(
+    object,
+    newx = newx,
+    ncomp = object$"opt.K", type = "response"
+  )
+  y.pred <- as.matrix(y.pred, ncol = 1L)
 
   # compute RMSEP and Q2.test
-  newy = as.matrix(newy, ncol = 1L)
-  residual = y.pred - newy
-  RMSEP = sqrt(mean((residual)^2, na.rm = TRUE))
-  MAE = mean(abs(residual), na.rm = TRUE)
-  Q2.test = 1L - (sum((residual)^2, na.rm = TRUE)/sum((newy - mean(newy))^2))
+  newy <- as.matrix(newy, ncol = 1L)
+  residual <- y.pred - newy
+  RMSEP <- sqrt(mean((residual)^2, na.rm = TRUE))
+  MAE <- mean(abs(residual), na.rm = TRUE)
+  Q2.test <- 1L - (sum((residual)^2, na.rm = TRUE) / sum((newy - mean(newy))^2))
 
-  res = list(
-    "RMSEP"    = RMSEP,
-    "MAE"      = MAE,
-    "Q2.test"  = Q2.test,
-    "y.pred"   = y.pred,
-    "residual" = residual)
+  res <- list(
+    "RMSEP" = RMSEP,
+    "MAE" = MAE,
+    "Q2.test" = Q2.test,
+    "y.pred" = y.pred,
+    "residual" = residual
+  )
 
   res
-
 }

@@ -20,68 +20,64 @@
 #'
 #' @export proto
 
-proto = function(
-  X, y, groups, type = c("max", "median"), mu = NULL) {
+proto <- function(X, y, groups, type = c("max", "median"), mu = NULL) {
 
-  #  INPUT CHECK #
-  if (length(y) != nrow(X))
+  # check inputs
+  if (length(y) != nrow(X)) {
     stop("X and y should have the same number of rows")
+  }
 
   # extract some parameters # dimensions
-  n = length(y)
-  p = ncol(X)
+  n <- length(y)
+  p <- ncol(X)
 
   # sort out the data
 
   # standardise X
-  X.tilde = apply(X, 2L, function(col) col - mean(col))
-  X.tilde = apply(X.tilde, 2L, function(col) col/sqrt(sum(col^2)))
+  X.tilde <- apply(X, 2L, function(col) col - mean(col))
+  X.tilde <- apply(X.tilde, 2L, function(col) col / sqrt(sum(col^2)))
 
   # is mu specified? adjust y accordingly
-  y.tilde = if (is.null(mu)) y - mean(y) else y - mu
+  y.tilde <- if (is.null(mu)) y - mean(y) else y - mu
 
   # groups: this is a vector of index which denote the groups
-  unique.groups = unique(groups)
-  K = length(unique.groups)
+  unique.groups <- unique(groups)
+  K <- length(unique.groups)
 
   # proto.matrix = matrix(NA, n, K)
-  col.ind = NULL
+  col.ind <- NULL
 
   for (i in 1L:K) {
-
-    var.index = which(groups == i)
-    abs.cor = abs(t(X.tilde[, var.index]) %*% y.tilde)
+    var.index <- which(groups == i)
+    abs.cor <- abs(t(X.tilde[, var.index]) %*% y.tilde)
 
     # find the maximum absolute correlation
     if (type == "max") {
-      index = which.max(abs.cor)
-      index = var.index[index[1]]
-      col.ind[i] = index
-      # proto.matrix[,i] = X[,index,drop = FALSE]
+      index <- which.max(abs.cor)
+      index <- var.index[index[1]]
+      col.ind[i] <- index
+      # proto.matrix[, i] = X[, index,drop = FALSE]
     }
 
     # find the median of absolute correlation
     if (type == "median") {
       if (length(abs.cor) %% 2 == 1) {
-        med.cor = median(abs.cor)
-        index = which(abs.cor == med.cor)
-        med.index = var.index[index]
-        col.ind[i] = med.index
-        # proto.matrix[,i] = x[,med.index,drop = FALSE]
+        med.cor <- median(abs.cor)
+        index <- which(abs.cor == med.cor)
+        med.index <- var.index[index]
+        col.ind[i] <- med.index
+        # proto.matrix[, i] = x[, med.index, drop = FALSE]
       } else {
-        min.index = which.min(abs.cor)
-        abs.cor = abs.cor[-min.index]
-        med.cor = median(abs.cor)
-        index = which(abs.cor == med.cor)
-        med.index = var.index[index]
-        col.ind[i] = med.index
-        # proto.matrix[,i] = x[,med.index,drop=FALSE]
+        min.index <- which.min(abs.cor)
+        abs.cor <- abs.cor[-min.index]
+        med.cor <- median(abs.cor)
+        index <- which(abs.cor == med.cor)
+        med.index <- var.index[index]
+        col.ind[i] <- med.index
+        # proto.matrix[, i] = x[, med.index, drop = FALSE]
       }
-
     }
-
   }
 
   col.ind
-
 }

@@ -14,25 +14,25 @@ and measured from 1100 to 2250 nm (576 data points) in steps of 2 nm.
 }
 \examples{
 data("beer")
-x.cal = beer$xtrain
+x.cal <- beer$xtrain
 dim(x.cal)
-x.test = beer$xtest
+x.test <- beer$xtest
 dim(x.test)
-y.cal = beer$ytrain
+y.cal <- beer$ytrain
 dim(y.cal)
-y.test = beer$ytest
+y.test <- beer$ytest
 dim(y.test)
 
-X = rbind(x.cal, x.test)
-y = rbind(y.cal, y.test)
-n = nrow(y)
+X <- rbind(x.cal, x.test)
+y <- rbind(y.cal, y.test)
+n <- nrow(y)
 
 set.seed(1001)
-samp.idx = sample(1L:n, round(n * 0.7))
-X.cal = X[samp.idx, ]
-y.cal = y[samp.idx]
-X.test = X[-samp.idx, ]
-y.test = y[-samp.idx]
+samp.idx <- sample(1L:n, round(n * 0.7))
+X.cal <- X[samp.idx, ]
+y.cal <- y[samp.idx]
+X.test <- X[-samp.idx, ]
+y.test <- y[-samp.idx]
 }
 \references{
 Norgaard, L., Saudland, A., Wagner, J., Nielsen, J. P., Munck, L., &

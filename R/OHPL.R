@@ -33,132 +33,139 @@
 #'
 #' @examples
 #' # generate simulation data
-#' dat = OHPL.sim(
+#' dat <- OHPL.sim(
 #'   n = 100, p = 100, rho = 0.8,
 #'   coef = rep(1, 10), snr = 3, p.train = 0.5,
-#'   seed = 1010)
+#'   seed = 1010
+#' )
 #'
 #' # split training and test set
-#' x = dat$x.tr
-#' y = dat$y.tr
-#' x.test = dat$x.te
-#' y.test = dat$y.te
+#' x <- dat$x.tr
+#' y <- dat$y.tr
+#' x.test <- dat$x.te
+#' y.test <- dat$y.te
 #'
 #' # fit the OHPL model
-#' fit = OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
+#' fit <- OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
+#'
 #' # selected variables
 #' fit$Vsel
+#'
 #' # make predictions
-#' y.pred = predict(fit, x.test)
+#' y.pred <- predict(fit, x.test)
+#'
 #' # compute evaluation metric RMSEP, Q2 and MAE for the test set
-#' perf = OHPL.RMSEP(fit, x.test, y.test)
+#' perf <- OHPL.RMSEP(fit, x.test, y.test)
 #' perf$RMSEP
 #' perf$Q2
 #' perf$MAE
-OHPL = function(
+OHPL <- function(
   x, y, maxcomp, gamma, cv.folds = 5L,
   G = 30L, type = c("max", "median"),
   scale = TRUE, pls.method = "simpls") {
+  type <- match.arg(type)
 
-  type = match.arg(type)
-
-  X = x
-  y = y
-  n.cal = length(y)
+  X <- x
+  y <- y
+  n.cal <- length(y)
 
   # compute beta
-  beta = single.beta(X = x, y = y, maxcomp = maxcomp)$"beta"
+  beta <- single.beta(X = x, y = y, maxcomp = maxcomp)$"beta"
 
   # cluster variables with Fisher optimal partitions algorithm
-  C = dlc(beta, maxk = G)$"C"
-  groups = FOP(beta, G, C)
+  C <- dlc(beta, maxk = G)$"C"
+  groups <- FOP(beta, G, C)
 
   # extract the prototypes from each group
-  prototype = proto(x, y, groups, type = type)
+  prototype <- proto(x, y, groups, type = type)
 
   # X here should be the original X, not the normalized X
-  X.pro = x[, prototype]
+  X.pro <- x[, prototype]
 
   # lasso with glmnet (with default lambdas)
-  lasso.cv = suppressWarnings(cv.glmnet(X.pro, y, nfolds = cv.folds))
+  lasso.cv <- suppressWarnings(cv.glmnet(X.pro, y, nfolds = cv.folds))
 
   # optnum: select the model with minimal cv error
-  lasso.optnum = which.min(lasso.cv$cvm)[1]
-  lasso.cv.min = sqrt(min(lasso.cv$cvm))  # cv.min
-  lasso.optlambda = lasso.cv$lambda.min   # optlambda
-  lasso.optbeta = lasso.cv$glmnet.fit$beta[, lasso.optnum]
-  max.beta = max(abs(lasso.optbeta))
+  lasso.optnum <- which.min(lasso.cv$cvm)[1]
+  lasso.cv.min <- sqrt(min(lasso.cv$cvm)) # cv.min
+  lasso.optlambda <- lasso.cv$lambda.min # optlambda
+  lasso.optbeta <- lasso.cv$glmnet.fit$beta[, lasso.optnum]
+  max.beta <- max(abs(lasso.optbeta))
 
   # edge case: when there are less groups, lasso tends to
   # generate many near-zero coefficients (false positives)
   # filter out variables here with hard thresholding
-  index.beta = (abs(lasso.optbeta)/max.beta) < gamma
-  lasso.optbeta[index.beta] = 0
+  index.beta <- (abs(lasso.optbeta) / max.beta) < gamma
+  lasso.optbeta[index.beta] <- 0
 
   # build PLS model with the selected prototype
   # and the variable grouping information
-  index.nozero = which(lasso.optbeta != 0)
-  Vsel = NULL
+  index.nozero <- which(lasso.optbeta != 0)
+  Vsel <- NULL
 
   for (i in 1L:length(index.nozero)) {
-    Vseli = which(groups == index.nozero[i])
-    Vsel = c(Vsel, Vseli)
+    Vseli <- which(groups == index.nozero[i])
+    Vsel <- c(Vsel, Vseli)
   }
 
   # Vsel.idx[[j]] = Vsel
   # use the selected variables to build the PLS model
   # note that the X and y here are the original ones (not centered)
-  Xsel = x[, Vsel]
+  Xsel <- x[, Vsel]
 
   if (dim(Xsel)[2L] == 0L) {
-    Vsel = c(Vsel, prototype)
-    Xsel = X.pro
+    Vsel <- c(Vsel, prototype)
+    Xsel <- X.pro
     print("The length of selected variables is zero")
   }
 
-  temp.ncomp = min((dim(Xsel)[1] - 1), dim(Xsel)[2])
+  temp.ncomp <- min((dim(Xsel)[1] - 1), dim(Xsel)[2])
   # Xsel.idx[[j]] = Xsel.temp
   # create a new data frame based on the selected
   # varaibles (Xsel) and the original response (y)
-  plsdf = as.data.frame(cbind(Xsel, y = y))
+  plsdf <- as.data.frame(cbind(Xsel, y = y))
 
-  Vsel.maxcomp = min(length(Vsel), maxcomp, temp.ncomp)
+  Vsel.maxcomp <- min(length(Vsel), maxcomp, temp.ncomp)
 
-  plsr.cvfit = plsr(
-    y ~ ., data = plsdf, ncomp = Vsel.maxcomp, scale = scale,
-    method = pls.method, validation = "LOO")
+  plsr.cvfit <- plsr(
+    y ~ .,
+    data = plsdf, ncomp = Vsel.maxcomp, scale = scale,
+    method = pls.method, validation = "LOO"
+  )
 
   # select best component number using adjusted CV
-  opt.K = which.min(pls::RMSEP(plsr.cvfit)[['val']][2L, 1L, -1L])
+  opt.K <- which.min(pls::RMSEP(plsr.cvfit)[["val"]][2L, 1L, -1L])
 
   # store the minimal RMSE from CV
-  RMSECV = min(pls::RMSEP(plsr.cvfit)[['val']][2L, 1L, -1L])
+  RMSECV <- min(pls::RMSEP(plsr.cvfit)[["val"]][2L, 1L, -1L])
 
   # store Q2.CV
-  Q2.cv = R2(plsr.cvfit, estimate = "CV")[["val"]][, , opt.K + 1]
+  Q2.cv <- R2(plsr.cvfit, estimate = "CV")[["val"]][, , opt.K + 1]
 
-  nVar = length(Vsel)
-  variables = matrix(0, nrow = ncol(X), ncol = 1)
-  variables[Vsel, ] = 1
+  nVar <- length(Vsel)
+  variables <- matrix(0, nrow = ncol(X), ncol = 1)
+  variables[Vsel, ] <- 1
 
   # build an optimal PLS model
-  plsdf = as.data.frame(cbind(Xsel, y = y))
+  plsdf <- as.data.frame(cbind(Xsel, y = y))
 
-  plsr.fit = plsr(
-    y ~ Xsel, data = plsdf, ncomp = Vsel.maxcomp, scale = scale,
-    method = pls.method, validation = "none")
+  plsr.fit <- plsr(
+    y ~ Xsel,
+    data = plsdf, ncomp = Vsel.maxcomp, scale = scale,
+    method = pls.method, validation = "none"
+  )
 
-  RMSEC = min(pls::RMSEP(plsr.fit, estimate = "train")[["val"]][, , opt.K + 1])
-  Q2.c = pls::R2(plsr.fit, estimate = "train")[["val"]][, , opt.K + 1]
+  RMSEC <- min(pls::RMSEP(plsr.fit, estimate = "train")[["val"]][, , opt.K + 1])
+  Q2.c <- pls::R2(plsr.fit, estimate = "train")[["val"]][, , opt.K + 1]
 
-  res = list(
+  res <- list(
     "model" = plsr.fit, "opt.K" = opt.K,
     "RMSECV" = RMSECV, "Q2.cv" = Q2.cv,
     "RMSEC" = RMSEC, "Q2.c" = Q2.c,
     "nVar" = nVar, "variables" = variables, "Vsel" = Vsel,
-    "groups" = groups)
-  class(res) = c("OHPL")
+    "groups" = groups
+  )
+  class(res) <- c("OHPL")
 
   res
-
 }

@@ -31,10 +31,11 @@ Generate simulation data (Gaussian case) following the
 settings in Xiao and Xu (2015).
 }
 \examples{
-dat = OHPL.sim(
+dat <- OHPL.sim(
   n = 100, p = 100, rho = 0.8,
   coef = rep(1, 10), snr = 3, p.train = 0.5,
-  seed = 1010)
+  seed = 1010
+)
 
 dim(dat$x.tr)
 dim(dat$x.te)

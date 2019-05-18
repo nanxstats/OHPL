@@ -27,49 +27,49 @@
 #' @export OHPL.sim
 #'
 #' @examples
-#' dat = OHPL.sim(
+#' dat <- OHPL.sim(
 #'   n = 100, p = 100, rho = 0.8,
 #'   coef = rep(1, 10), snr = 3, p.train = 0.5,
-#'   seed = 1010)
+#'   seed = 1010
+#' )
 #'
 #' dim(dat$x.tr)
 #' dim(dat$x.te)
-
-OHPL.sim = function(
+OHPL.sim <- function(
   n = 100, p = 100,
   rho = 0.8, coef = rep(1, 10), snr = 3,
   p.train = 0.5, seed = 1001) {
-
-  call = match.call()
+  call <- match.call()
 
   set.seed(seed)
 
-  sigma = matrix(0, p, p)
-  corvec = function(i, p, rho) rho^(abs(i - 1L:p))
-  for (i in 1:p) sigma[i, ] = corvec(i, p, rho)
+  sigma <- matrix(0, p, p)
+  corvec <- function(i, p, rho) rho^(abs(i - 1L:p))
+  for (i in 1:p) sigma[i, ] <- corvec(i, p, rho)
 
-  X = rmvnorm(n, rep(0, p), sigma)
+  X <- rmvnorm(n, rep(0, p), sigma)
 
   # non-zero coefficients
-  beta0 = matrix(c(coef, rep(0, (p - length(coef)))))
+  beta0 <- matrix(c(coef, rep(0, (p - length(coef)))))
 
-  snr.numerator = as.vector(t(beta0) %*% sigma %*% beta0)
-  snr.denominator = snr.numerator/snr
-  sd = sqrt(snr.denominator)
-  eps = matrix(rnorm(n, 0, sd))
+  snr.numerator <- as.vector(t(beta0) %*% sigma %*% beta0)
+  snr.denominator <- snr.numerator / snr
+  sd <- sqrt(snr.denominator)
+  eps <- matrix(rnorm(n, 0, sd))
 
-  y = as.matrix((X %*% beta0) + eps)
+  y <- as.matrix((X %*% beta0) + eps)
 
   # training / test set splitting
-  tr.row = sample(1L:n, round(n * p.train), replace = FALSE)
+  tr.row <- sample(1L:n, round(n * p.train), replace = FALSE)
 
-  x.tr = X[tr.row,  , drop = FALSE]
-  y.tr = y[tr.row,  , drop = FALSE]
-  x.te = X[-tr.row, , drop = FALSE]
-  y.te = y[-tr.row, , drop = FALSE]
+  x.tr <- X[tr.row, , drop = FALSE]
+  y.tr <- y[tr.row, , drop = FALSE]
+  x.te <- X[-tr.row, , drop = FALSE]
+  y.te <- y[-tr.row, , drop = FALSE]
 
-  list('x.tr' = x.tr, 'y.tr' = y.tr,
-       'x.te' = x.te, 'y.te' = y.te,
-       'call' = call)
-
+  list(
+    "x.tr" = x.tr, "y.tr" = y.tr,
+    "x.te" = x.te, "y.te" = y.te,
+    "call" = call
+  )
 }
