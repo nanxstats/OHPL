@@ -66,7 +66,7 @@ performance evaluation metrics RMSEP, MAE, and Q2." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">OHPL</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4</span>
       </span>
     </div>
 
@@ -144,22 +144,24 @@ fitted by <code><a href='OHPL.html'>OHPL</a></code>.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># generate simulation data</span>
-<span class='no'>dat</span> <span class='kw'>=</span> <span class='fu'><a href='OHPL.sim.html'>OHPL.sim</a></span>(
+<span class='no'>dat</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='OHPL.sim.html'>OHPL.sim</a></span>(
   <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>rho</span> <span class='kw'>=</span> <span class='fl'>0.8</span>,
   <span class='kw'>coef</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fl'>1</span>, <span class='fl'>10</span>), <span class='kw'>snr</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p.train</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>1010</span>)
+  <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>1010</span>
+)
 
 <span class='co'># split training and test set</span>
-<span class='no'>x</span> <span class='kw'>=</span> <span class='no'>dat</span>$<span class='no'>x.tr</span>
-<span class='no'>y</span> <span class='kw'>=</span> <span class='no'>dat</span>$<span class='no'>y.tr</span>
-<span class='no'>x.test</span> <span class='kw'>=</span> <span class='no'>dat</span>$<span class='no'>x.te</span>
-<span class='no'>y.test</span> <span class='kw'>=</span> <span class='no'>dat</span>$<span class='no'>y.te</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>dat</span>$<span class='no'>x.tr</span>
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='no'>dat</span>$<span class='no'>y.tr</span>
+<span class='no'>x.test</span> <span class='kw'>&lt;-</span> <span class='no'>dat</span>$<span class='no'>x.te</span>
+<span class='no'>y.test</span> <span class='kw'>&lt;-</span> <span class='no'>dat</span>$<span class='no'>y.te</span>
 
 <span class='co'># fit the OHPL model</span>
-<span class='no'>fit</span> <span class='kw'>=</span> <span class='fu'><a href='OHPL.html'>OHPL</a></span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>maxcomp</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>gamma</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>G</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"max"</span>)
+<span class='no'>fit</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='OHPL.html'>OHPL</a></span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>maxcomp</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>gamma</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>G</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"max"</span>)
+
 <span class='co'># compute evaluation metric RMSEP, Q2 and MAE for the test set</span>
-<span class='no'>perf</span> <span class='kw'>=</span> <span class='fu'>OHPL.RMSEP</span>(<span class='no'>fit</span>, <span class='no'>x.test</span>, <span class='no'>y.test</span>)
-<span class='no'>perf</span>$<span class='no'>RMSEP</span></div><div class='output co'>#&gt; [1] 4.328435</div><div class='input'><span class='no'>perf</span>$<span class='no'>Q2</span></div><div class='output co'>#&gt; [1] 0.4259523</div><div class='input'><span class='no'>perf</span>$<span class='no'>MAE</span></div><div class='output co'>#&gt; [1] 3.404655</div></pre>
+<span class='no'>perf</span> <span class='kw'>&lt;-</span> <span class='fu'>OHPL.RMSEP</span>(<span class='no'>fit</span>, <span class='no'>x.test</span>, <span class='no'>y.test</span>)
+<span class='no'>perf</span>$<span class='no'>RMSEP</span></div><div class='output co'>#&gt; [1] 4.87666</div><div class='input'><span class='no'>perf</span>$<span class='no'>Q2</span></div><div class='output co'>#&gt; [1] 0.6026672</div><div class='input'><span class='no'>perf</span>$<span class='no'>MAE</span></div><div class='output co'>#&gt; [1] 3.930114</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

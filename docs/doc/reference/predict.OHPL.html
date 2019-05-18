@@ -65,7 +65,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">OHPL</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.4</span>
       </span>
     </div>
 
@@ -154,72 +154,73 @@ stored in the model object will be used.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># generate simulation data</span>
-<span class='no'>dat</span> <span class='kw'>=</span> <span class='fu'><a href='OHPL.sim.html'>OHPL.sim</a></span>(
+<span class='no'>dat</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='OHPL.sim.html'>OHPL.sim</a></span>(
   <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>p</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>rho</span> <span class='kw'>=</span> <span class='fl'>0.8</span>,
   <span class='kw'>coef</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rep'>rep</a></span>(<span class='fl'>1</span>, <span class='fl'>10</span>), <span class='kw'>snr</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>p.train</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>1010</span>)
+  <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>1010</span>
+)
 
 <span class='co'># split training and test set</span>
-<span class='no'>x</span> <span class='kw'>=</span> <span class='no'>dat</span>$<span class='no'>x.tr</span>
-<span class='no'>y</span> <span class='kw'>=</span> <span class='no'>dat</span>$<span class='no'>y.tr</span>
-<span class='no'>x.test</span> <span class='kw'>=</span> <span class='no'>dat</span>$<span class='no'>x.te</span>
-<span class='no'>y.test</span> <span class='kw'>=</span> <span class='no'>dat</span>$<span class='no'>y.te</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>dat</span>$<span class='no'>x.tr</span>
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='no'>dat</span>$<span class='no'>y.tr</span>
+<span class='no'>x.test</span> <span class='kw'>&lt;-</span> <span class='no'>dat</span>$<span class='no'>x.te</span>
+<span class='no'>y.test</span> <span class='kw'>&lt;-</span> <span class='no'>dat</span>$<span class='no'>y.te</span>
 
 <span class='co'># fit the OHPL model</span>
-<span class='no'>fit</span> <span class='kw'>=</span> <span class='fu'><a href='OHPL.html'>OHPL</a></span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>maxcomp</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>gamma</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>G</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"max"</span>)
+<span class='no'>fit</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='OHPL.html'>OHPL</a></span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>maxcomp</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>gamma</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>G</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"max"</span>)
 <span class='co'># make predictions</span>
-<span class='no'>y.pred</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/predict'>predict</a></span>(<span class='no'>fit</span>, <span class='no'>x.test</span>)
-<span class='no'>y.pred</span></div><div class='output co'>#&gt;               [,1]
-#&gt;  [1,]  -2.36680897
-#&gt;  [2,]   5.62683043
-#&gt;  [3,]   3.47170635
-#&gt;  [4,]  -5.71861391
-#&gt;  [5,]  -5.36740896
-#&gt;  [6,] -12.94458727
-#&gt;  [7,]  13.20261818
-#&gt;  [8,]   8.18123434
-#&gt;  [9,]  14.04160620
-#&gt; [10,]   0.48242868
-#&gt; [11,]  -1.70108825
-#&gt; [12,]  -1.54976541
-#&gt; [13,] -13.18632608
-#&gt; [14,]   1.36634014
-#&gt; [15,]  -5.82010490
-#&gt; [16,]   1.25733848
-#&gt; [17,]   4.73602395
-#&gt; [18,]   0.02140671
-#&gt; [19,]  -3.77030549
-#&gt; [20,]  -6.56719385
-#&gt; [21,]  -0.79410194
-#&gt; [22,]  -1.77649070
-#&gt; [23,] -15.70824057
-#&gt; [24,]   7.21354397
-#&gt; [25,]   8.58242318
-#&gt; [26,]   5.99785629
-#&gt; [27,]   8.24261412
-#&gt; [28,]  -1.54547326
-#&gt; [29,]   3.21527367
-#&gt; [30,]   8.72745809
-#&gt; [31,]   1.48661704
-#&gt; [32,]   4.27318886
-#&gt; [33,]  -2.82634181
-#&gt; [34,]   1.40561980
-#&gt; [35,]   7.87983789
-#&gt; [36,]  -4.96685347
-#&gt; [37,]  -3.74578533
-#&gt; [38,] -11.10348778
-#&gt; [39,] -11.11169455
-#&gt; [40,]   5.91847254
-#&gt; [41,]   3.75469698
-#&gt; [42,]   2.87067721
-#&gt; [43,]   3.37132155
-#&gt; [44,]   2.41346318
-#&gt; [45,]   7.31285479
-#&gt; [46,]   3.68684711
-#&gt; [47,]   0.99440807
-#&gt; [48,]   1.34151875
-#&gt; [49,]   3.33762517
-#&gt; [50,]  -6.72617112</div></pre>
+<span class='no'>y.pred</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/predict'>predict</a></span>(<span class='no'>fit</span>, <span class='no'>x.test</span>)
+<span class='no'>y.pred</span></div><div class='output co'>#&gt;              [,1]
+#&gt;  [1,]  -1.4934986
+#&gt;  [2,]  -3.1985116
+#&gt;  [3,]  -3.9991944
+#&gt;  [4,]  -7.0397824
+#&gt;  [5,]  -8.4295953
+#&gt;  [6,]   2.2299174
+#&gt;  [7,]   1.1553114
+#&gt;  [8,]   1.9213972
+#&gt;  [9,]  -3.7234000
+#&gt; [10,]   2.3534563
+#&gt; [11,]  -6.0150089
+#&gt; [12,]  10.1426639
+#&gt; [13,]  -8.9355458
+#&gt; [14,]   2.1876354
+#&gt; [15,]  -1.4945804
+#&gt; [16,]  -5.3226173
+#&gt; [17,]   4.3945984
+#&gt; [18,]  -1.1679449
+#&gt; [19,]  -1.9954988
+#&gt; [20,] -12.8777276
+#&gt; [21,]   7.3833293
+#&gt; [22,]   6.2708949
+#&gt; [23,]   7.2140258
+#&gt; [24,]  -4.2743662
+#&gt; [25,]   1.0125648
+#&gt; [26,]   0.4475456
+#&gt; [27,]   2.0927234
+#&gt; [28,]   6.6396418
+#&gt; [29,] -11.4537155
+#&gt; [30,]   4.2973625
+#&gt; [31,]   6.5162231
+#&gt; [32,]  12.8164030
+#&gt; [33,]   1.0012365
+#&gt; [34,]   1.2443397
+#&gt; [35,]  -0.9012307
+#&gt; [36,]   8.1789392
+#&gt; [37,]  -1.3727632
+#&gt; [38,]  -6.5154226
+#&gt; [39,]  -1.0541956
+#&gt; [40,]   2.6830010
+#&gt; [41,]  -0.7592643
+#&gt; [42,]   4.2746329
+#&gt; [43,]   3.3917765
+#&gt; [44,]   4.2796405
+#&gt; [45,]  -0.4833004
+#&gt; [46,]   8.3971766
+#&gt; [47,]   2.0117400
+#&gt; [48,]  -9.1849344
+#&gt; [49,]   5.2380432
+#&gt; [50,]  -5.2196917</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
