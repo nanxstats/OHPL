@@ -4,9 +4,19 @@
 \alias{cv.OHPL}
 \title{Cross-Validation for Ordered Homogeneity Pursuit Lasso}
 \usage{
-cv.OHPL(X.cal, y.cal, maxcomp, gamma = seq(0.1, 0.9, 0.1), X.test,
-  y.test, cv.folds = 5L, G = 30L, type = c("max", "median"),
-  scale = TRUE, pls.method = "simpls")
+cv.OHPL(
+  X.cal,
+  y.cal,
+  maxcomp,
+  gamma = seq(0.1, 0.9, 0.1),
+  X.test,
+  y.test,
+  cv.folds = 5L,
+  G = 30L,
+  type = c("max", "median"),
+  scale = TRUE,
+  pls.method = "simpls"
+)
 }
 \arguments{
 \item{X.cal}{Predictor matrix (training)}

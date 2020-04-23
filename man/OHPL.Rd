@@ -4,8 +4,17 @@
 \alias{OHPL}
 \title{Ordered Homogeneity Pursuit Lasso}
 \usage{
-OHPL(x, y, maxcomp, gamma, cv.folds = 5L, G = 30L, type = c("max",
-  "median"), scale = TRUE, pls.method = "simpls")
+OHPL(
+  x,
+  y,
+  maxcomp,
+  gamma,
+  cv.folds = 5L,
+  G = 30L,
+  type = c("max", "median"),
+  scale = TRUE,
+  pls.method = "simpls"
+)
 }
 \arguments{
 \item{x}{Predictor matrix.}
