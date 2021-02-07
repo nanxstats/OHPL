@@ -8,6 +8,13 @@
 
 <title>The wheat dataset — wheat • OHPL</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -46,6 +53,7 @@
 protein and moisture content, published by J. Kalivas.
 Samples were measured by diffuse reflectance as log (I/R)
 from 1100 to 2500 nm (701 data points) in 2 nm intervals." />
+<meta property="og:image" content="/logo.png" />
 
 
 
@@ -85,7 +93,7 @@ from 1100 to 2500 nm (701 data points) in 2 nm intervals." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -99,7 +107,7 @@ from 1100 to 2500 nm (701 data points) in 2 nm intervals." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/nanxstats/OHPL/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -128,7 +136,7 @@ Samples were measured by diffuse reflectance as log (I/R)
 from 1100 to 2500 nm (701 data points) in 2 nm intervals.</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>wheat</span>)</pre>
+    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>wheat</span><span class='op'>)</span></pre>
 
 
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
@@ -137,18 +145,19 @@ from 1100 to 2500 nm (701 data points) in 2 nm intervals.</p>
 <em>Chemometrics and Intelligent Laboratory Systems</em>, 37(2), 255--259.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='st'>"wheat"</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"wheat"</span><span class='op'>)</span>
 
-<span class='no'>X</span> <span class='kw'>&lt;-</span> <span class='no'>wheat</span>$<span class='no'>x</span>
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='no'>wheat</span>$<span class='no'>protein</span>
-<span class='no'>n</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span>(<span class='no'>wheat</span>$<span class='no'>x</span>)
+<span class='va'>X</span> <span class='op'>&lt;-</span> <span class='va'>wheat</span><span class='op'>$</span><span class='va'>x</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='va'>wheat</span><span class='op'>$</span><span class='va'>protein</span>
+<span class='va'>n</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span><span class='op'>(</span><span class='va'>wheat</span><span class='op'>$</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span>(<span class='fl'>1001</span>)
-<span class='no'>samp.idx</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>1L</span>:<span class='no'>n</span>, <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span>(<span class='no'>n</span> * <span class='fl'>0.7</span>))
-<span class='no'>X.cal</span> <span class='kw'>&lt;-</span> <span class='no'>X</span>[<span class='no'>samp.idx</span>, ]
-<span class='no'>y.cal</span> <span class='kw'>&lt;-</span> <span class='no'>y</span>[<span class='no'>samp.idx</span>]
-<span class='no'>X.test</span> <span class='kw'>&lt;-</span> <span class='no'>X</span>[-<span class='no'>samp.idx</span>, ]
-<span class='no'>y.test</span> <span class='kw'>&lt;-</span> <span class='no'>y</span>[-<span class='no'>samp.idx</span>]</div></pre>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>1001</span><span class='op'>)</span>
+<span class='va'>samp.idx</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fl'>1L</span><span class='op'>:</span><span class='va'>n</span>, <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>n</span> <span class='op'>*</span> <span class='fl'>0.7</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>X.cal</span> <span class='op'>&lt;-</span> <span class='va'>X</span><span class='op'>[</span><span class='va'>samp.idx</span>, <span class='op'>]</span>
+<span class='va'>y.cal</span> <span class='op'>&lt;-</span> <span class='va'>y</span><span class='op'>[</span><span class='va'>samp.idx</span><span class='op'>]</span>
+<span class='va'>X.test</span> <span class='op'>&lt;-</span> <span class='va'>X</span><span class='op'>[</span><span class='op'>-</span><span class='va'>samp.idx</span>, <span class='op'>]</span>
+<span class='va'>y.test</span> <span class='op'>&lt;-</span> <span class='va'>y</span><span class='op'>[</span><span class='op'>-</span><span class='va'>samp.idx</span><span class='op'>]</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -164,7 +173,7 @@ from 1100 to 2500 nm (701 data points) in 2 nm intervals.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
