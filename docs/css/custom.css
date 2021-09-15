@@ -2,30 +2,10 @@ body {
     font-family: "Lora", Palatino, Times, "Times New Roman", serif;
 }
 
-.container {
-    max-width: 960px;
-}
-
 .row p, .row ul {
     font-size: 1.0625rem;
     line-height: 1.875rem;
     margin-top: 1rem;
-}
-
-a {
-    color: #007bff !important;
-}
-
-a:active {
-    color: #007bff !important;
-}
-
-a:hover {
-    color: #0056b3 !important;
-}
-
-hr {
-    border-top: .08rem solid #CCCCCC;
 }
 
 .title-header {
@@ -40,7 +20,7 @@ hr {
 
 .authors, .affiliation {
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-    font-size: 0.975rem;
+    font-size: 1rem;
 }
 
 .authors {
@@ -59,8 +39,4 @@ hr {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 0rem;
-}
-
-.funding {
-    font-size: 0.8rem;
 }
