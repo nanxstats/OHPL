@@ -1,7 +1,12 @@
 destination: "docs/doc/"
 
+url: https://ohpl.io/doc/
+
+template:
+  bootstrap: 5
+
 reference:
-  - title: "Fitting OHPL Models"
+  - title: "Fit OHPL models"
     desc: >
       Functions for fitting OHPL models.
     contents:
@@ -10,7 +15,7 @@ reference:
       - proto
       - dlc
       - OHPL-package
-  - title: "Evaluation of OHPL Models"
+  - title: "Evaluate OHPL models"
     desc: >
       Functions for cross-validation, prediction, performance evaluation,
       and generation of simulated data.

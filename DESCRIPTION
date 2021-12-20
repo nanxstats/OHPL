@@ -26,4 +26,4 @@ Imports:
     glmnet,
     pls,
     mvtnorm
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2

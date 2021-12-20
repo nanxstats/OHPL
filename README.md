@@ -1,4 +1,4 @@
-# Ordered Homogeneity Pursuit Lasso (OHPL)  <a href="https://ohpl.io"><img src="man/figures/logo.png" align="right" height="180" /></a>
+# Ordered Homogeneity Pursuit Lasso <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/nanxstats/OHPL/workflows/R-CMD-check/badge.svg)](https://github.com/nanxstats/OHPL/actions)
