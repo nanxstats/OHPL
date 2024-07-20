@@ -24,6 +24,4 @@
 
 # OHPL 1.2
 
-## New Features
-
 - Released to CRAN.
