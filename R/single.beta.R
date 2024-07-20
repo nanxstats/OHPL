@@ -10,7 +10,7 @@ single.beta <- function(X, y, maxcomp = NULL) {
     scale = TRUE, method = "simpls", validation = "LOO"
   )
 
-  # select best component number using adjusted CV
+  # Select the best component number using adjusted CV
   opt.cv <- which.min(pls::RMSEP(plsr.cvfit)[["val"]][2L, 1L, -1L])
   rmse.cv <- min(pls::RMSEP(plsr.cvfit)[["val"]][2L, 1L, -1L])
 

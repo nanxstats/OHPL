@@ -23,9 +23,9 @@ OHPL(
 
 \item{maxcomp}{Maximum number of components for PLS.}
 
-\item{gamma}{A number between (0, 1) for generating
-the gamma sequence. An usual choice for gamma could be
-\code{n * 0.05}, where \code{n} is a number in 2, 3, ..., 19.}
+\item{gamma}{A number between (0, 1) for generating the gamma sequence.
+An usual choice for gamma could be \code{n * 0.05}, where \code{n} is a number
+in 2, 3, ..., 19.}
 
 \item{cv.folds}{Number of cross-validation folds.}
 
@@ -35,43 +35,41 @@ the gamma sequence. An usual choice for gamma could be
 or find the median of absolute correlation (\code{"median"}).
 Default is \code{"max"}.}
 
-\item{scale}{Should the predictor matrix be scaled?
-Default is \code{TRUE}.}
+\item{scale}{Should the predictor matrix be scaled? Default is \code{TRUE}.}
 
-\item{pls.method}{Method for fitting the PLS model.
-Default is \code{"simpls"}. See section "Details"
-in \code{\link[pls]{plsr}} for all possible options.}
+\item{pls.method}{Method for fitting the PLS model. Default is \code{"simpls"}.
+See the details section in \code{\link[pls:mvr]{pls::plsr()}} for all possible options.}
 }
 \value{
 A list of fitted OHPL model object with performance metrics.
 }
 \description{
-This function fits the ordered homogeneity pursuit lasso (OHPL) model.
+Fits the ordered homogeneity pursuit lasso (OHPL) model.
 }
 \examples{
-# generate simulation data
+# Generate simulation data
 dat <- OHPL.sim(
   n = 100, p = 100, rho = 0.8,
   coef = rep(1, 10), snr = 3, p.train = 0.5,
   seed = 1010
 )
 
-# split training and test set
+# Split training and test set
 x <- dat$x.tr
 y <- dat$y.tr
 x.test <- dat$x.te
 y.test <- dat$y.te
 
-# fit the OHPL model
+# Fit the OHPL model
 fit <- OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
 
-# selected variables
+# Selected variables
 fit$Vsel
 
-# make predictions
+# Make predictions
 y.pred <- predict(fit, x.test)
 
-# compute evaluation metric RMSEP, Q2 and MAE for the test set
+# Compute evaluation metric RMSEP, Q2 and MAE for the test set
 perf <- OHPL.RMSEP(fit, x.test, y.test)
 perf$RMSEP
 perf$Q2
@@ -81,6 +79,5 @@ perf$MAE
 You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017).
 Ordered homogeneity pursuit lasso for group variable selection with
 applications to spectroscopic data.
-\emph{Chemometrics and Intelligent Laboratory Systems} 168, 62-71.
-\url{https://doi.org/10.1016/j.chemolab.2017.07.004}
+\emph{Chemometrics and Intelligent Laboratory Systems} 168, 62--71.
 }

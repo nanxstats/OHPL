@@ -2,8 +2,8 @@
 % Please edit documentation in R/OHPL.sim.R
 \name{OHPL.sim}
 \alias{OHPL.sim}
-\title{Generate Simulation Data for Benchmarking Sparse Regressions
-(Gaussian Response)}
+\title{Generate simulation data for benchmarking sparse regressions
+(Gaussian response)}
 \usage{
 OHPL.sim(
   n = 100,
@@ -31,7 +31,7 @@ OHPL.sim(
 \item{seed}{Random seed for reproducibility.}
 }
 \value{
-List of \code{x.tr}, \code{x.te}, \code{y.tr}, and \code{y.te}.
+A list containing \code{x.tr}, \code{x.te}, \code{y.tr}, and \code{y.te}.
 }
 \description{
 Generate simulation data (Gaussian case) following the
@@ -53,5 +53,5 @@ reducing false positives in high-dimensional variable selection.
 \emph{Journal of Statistical Computation and Simulation} 85(18), 3755--3765.
 }
 \author{
-Nan Xiao <\url{https://nanx.me}>
+Nan Xiao \if{html}{\out{<\url{https://nanx.me}>}}
 }

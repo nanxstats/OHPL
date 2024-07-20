@@ -1,18 +1,18 @@
-#' Fisher Optimal Partition
+#' Fisher optimal partition
 #'
 #' The Fisher optimal partition algorithm.
 #'
-#' @param X a set of samples
-#' @param k number of classes
-#' @param C statistic from the output of \code{\link{dlc}}
+#' @param X A set of samples.
+#' @param k Number of classes.
+#' @param C Statistic from the output of [dlc()].
 #'
-#' @return index vector for each sample's classification
+#' @return Index vector for each sample's classification.
 #'
 #' @export FOP
 #'
 #' @references
 #' W. D. Fisher (1958). On grouping for maximum homogeneity.
-#' \emph{Journal of the American Statistical Association},
+#' _Journal of the American Statistical Association_,
 #' vol. 53, pp. 789--798.
 #'
 #' @examples

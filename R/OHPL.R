@@ -1,88 +1,86 @@
 #' Ordered Homogeneity Pursuit Lasso
 #'
-#' This function fits the ordered homogeneity pursuit lasso (OHPL) model.
+#' Fits the ordered homogeneity pursuit lasso (OHPL) model.
 #'
 #' @param x Predictor matrix.
 #' @param y Response matrix with one column.
 #' @param maxcomp Maximum number of components for PLS.
-#' @param gamma A number between (0, 1) for generating
-#' the gamma sequence. An usual choice for gamma could be
-#' \code{n * 0.05}, where \code{n} is a number in 2, 3, ..., 19.
+#' @param gamma A number between (0, 1) for generating the gamma sequence.
+#'   An usual choice for gamma could be `n * 0.05`, where `n` is a number
+#'   in 2, 3, ..., 19.
 #' @param cv.folds Number of cross-validation folds.
 #' @param G Maximum number of variable groups.
-#' @param type Find the maximum absolute correlation (\code{"max"})
-#' or find the median of absolute correlation (\code{"median"}).
-#' Default is \code{"max"}.
-#' @param scale Should the predictor matrix be scaled?
-#' Default is \code{TRUE}.
-#' @param pls.method Method for fitting the PLS model.
-#' Default is \code{"simpls"}. See section "Details"
-#' in \code{\link[pls]{plsr}} for all possible options.
+#' @param type Find the maximum absolute correlation (`"max"`)
+#'   or find the median of absolute correlation (`"median"`).
+#'   Default is `"max"`.
+#' @param scale Should the predictor matrix be scaled? Default is `TRUE`.
+#' @param pls.method Method for fitting the PLS model. Default is `"simpls"`.
+#'   See the details section in [pls::plsr()] for all possible options.
 #'
 #' @return A list of fitted OHPL model object with performance metrics.
 #'
 #' @importFrom glmnet cv.glmnet
+#'
 #' @export OHPL
 #'
 #' @references
 #' You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017).
 #' Ordered homogeneity pursuit lasso for group variable selection with
 #' applications to spectroscopic data.
-#' \emph{Chemometrics and Intelligent Laboratory Systems} 168, 62-71.
-#' \url{https://doi.org/10.1016/j.chemolab.2017.07.004}
+#' _Chemometrics and Intelligent Laboratory Systems_ 168, 62--71.
 #'
 #' @examples
-#' # generate simulation data
+#' # Generate simulation data
 #' dat <- OHPL.sim(
 #'   n = 100, p = 100, rho = 0.8,
 #'   coef = rep(1, 10), snr = 3, p.train = 0.5,
 #'   seed = 1010
 #' )
 #'
-#' # split training and test set
+#' # Split training and test set
 #' x <- dat$x.tr
 #' y <- dat$y.tr
 #' x.test <- dat$x.te
 #' y.test <- dat$y.te
 #'
-#' # fit the OHPL model
+#' # Fit the OHPL model
 #' fit <- OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
 #'
-#' # selected variables
+#' # Selected variables
 #' fit$Vsel
 #'
-#' # make predictions
+#' # Make predictions
 #' y.pred <- predict(fit, x.test)
 #'
-#' # compute evaluation metric RMSEP, Q2 and MAE for the test set
+#' # Compute evaluation metric RMSEP, Q2 and MAE for the test set
 #' perf <- OHPL.RMSEP(fit, x.test, y.test)
 #' perf$RMSEP
 #' perf$Q2
 #' perf$MAE
 OHPL <- function(
-  x, y, maxcomp, gamma, cv.folds = 5L,
-  G = 30L, type = c("max", "median"),
-  scale = TRUE, pls.method = "simpls") {
+    x, y, maxcomp, gamma, cv.folds = 5L,
+    G = 30L, type = c("max", "median"),
+    scale = TRUE, pls.method = "simpls") {
   type <- match.arg(type)
 
   X <- x
   y <- y
   n.cal <- length(y)
 
-  # compute beta
+  # Compute beta
   beta <- single.beta(X = x, y = y, maxcomp = maxcomp)$"beta"
 
-  # cluster variables with Fisher optimal partitions algorithm
+  # Cluster variables with Fisher optimal partitions algorithm
   C <- dlc(beta, maxk = G)$"C"
   groups <- FOP(beta, G, C)
 
-  # extract the prototypes from each group
+  # Extract the prototypes from each group
   prototype <- proto(x, y, groups, type = type)
 
   # X here should be the original X, not the normalized X
   X.pro <- x[, prototype]
 
-  # lasso with glmnet (with default lambdas)
+  # Lasso with glmnet (with default lambdas)
   lasso.cv <- suppressWarnings(cv.glmnet(X.pro, y, nfolds = cv.folds))
 
   # optnum: select the model with minimal cv error
@@ -92,13 +90,13 @@ OHPL <- function(
   lasso.optbeta <- lasso.cv$glmnet.fit$beta[, lasso.optnum]
   max.beta <- max(abs(lasso.optbeta))
 
-  # edge case: when there are less groups, lasso tends to
+  # Edge case: when there are less groups, lasso tends to
   # generate many near-zero coefficients (false positives)
-  # filter out variables here with hard thresholding
+  # filter out variables here with hard thresholding.
   index.beta <- (abs(lasso.optbeta) / max.beta) < gamma
   lasso.optbeta[index.beta] <- 0
 
-  # build PLS model with the selected prototype
+  # Build PLS model with the selected prototype
   # and the variable grouping information
   index.nozero <- which(lasso.optbeta != 0)
   Vsel <- NULL
@@ -133,20 +131,20 @@ OHPL <- function(
     method = pls.method, validation = "LOO"
   )
 
-  # select best component number using adjusted CV
+  # Select the best component number using adjusted CV
   opt.K <- which.min(pls::RMSEP(plsr.cvfit)[["val"]][2L, 1L, -1L])
 
-  # store the minimal RMSE from CV
+  # Store the minimal RMSE from CV
   RMSECV <- min(pls::RMSEP(plsr.cvfit)[["val"]][2L, 1L, -1L])
 
-  # store Q2.CV
+  # Store Q2.CV
   Q2.cv <- R2(plsr.cvfit, estimate = "CV")[["val"]][, , opt.K + 1]
 
   nVar <- length(Vsel)
   variables <- matrix(0, nrow = ncol(X), ncol = 1)
   variables[Vsel, ] <- 1
 
-  # build an optimal PLS model
+  # Build an optimal PLS model
   plsdf <- as.data.frame(cbind(Xsel, y = y))
 
   plsr.fit <- plsr(

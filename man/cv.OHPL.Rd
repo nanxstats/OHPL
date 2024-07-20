@@ -2,7 +2,7 @@
 % Please edit documentation in R/cv.OHPL.R
 \name{cv.OHPL}
 \alias{cv.OHPL}
-\title{Cross-Validation for Ordered Homogeneity Pursuit Lasso}
+\title{Cross-validation for Ordered Homogeneity Pursuit Lasso}
 \usage{
 cv.OHPL(
   X.cal,
@@ -19,21 +19,21 @@ cv.OHPL(
 )
 }
 \arguments{
-\item{X.cal}{Predictor matrix (training)}
+\item{X.cal}{Predictor matrix (training).}
 
-\item{y.cal}{Response matrix with one column (training)}
+\item{y.cal}{Response matrix with one column (training).}
 
-\item{maxcomp}{Maximum number of components for PLS}
+\item{maxcomp}{Maximum number of components for PLS.}
 
 \item{gamma}{A vector of the gamma sequence between (0, 1).}
 
-\item{X.test}{X.test Predictor matrix (test)}
+\item{X.test}{X.test Predictor matrix (test).}
 
-\item{y.test}{y.test Response matrix with one column (test)}
+\item{y.test}{y.test Response matrix with one column (test).}
 
-\item{cv.folds}{Number of cross-validation folds}
+\item{cv.folds}{Number of cross-validation folds.}
 
-\item{G}{Maximum number of variable groups}
+\item{G}{Maximum number of variable groups.}
 
 \item{type}{Find the maximum absolute correlation (\code{"max"})
 or find the median of absolute correlation (\code{"median"}).
@@ -44,7 +44,7 @@ Default is \code{TRUE}.}
 
 \item{pls.method}{Method for fitting the PLS model.
 Default is \code{"simpls"}. See the details section
-in \code{\link[pls]{plsr}} for all possible options.}
+in \code{\link[pls:mvr]{pls::plsr()}} for all possible options.}
 }
 \value{
 A list containing the optimal model, RMSEP, Q2,
@@ -53,7 +53,7 @@ of groups to use in group lasso.
 }
 \description{
 Use cross-validation to help select the optimal number
-of variable groups and the value of gamma.
+of variable groups and the value of \code{gamma}.
 }
 \examples{
 data("wheat")
@@ -69,7 +69,7 @@ y.cal <- y[samp.idx]
 X.test <- X[-samp.idx, ]
 y.test <- y[-samp.idx]
 
-# this could run a while
+# This could run for a while
 \dontrun{
 cv.fit <- cv.OHPL(
   x, y,

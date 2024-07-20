@@ -2,13 +2,12 @@
 % Please edit documentation in R/OHPL.RMSEP.R
 \name{OHPL.RMSEP}
 \alias{OHPL.RMSEP}
-\title{Compute RMSEP, MAE, and Q2 for a Test Set}
+\title{Compute RMSEP, MAE, and Q2 for a test set}
 \usage{
 OHPL.RMSEP(object, newx, newy)
 }
 \arguments{
-\item{object}{An An object of class \code{OHPL}
-fitted by \code{\link{OHPL}}.}
+\item{object}{Object of class \code{OHPL} fitted by \code{\link[=OHPL]{OHPL()}}.}
 
 \item{newx}{Predictor matrix of the new data.}
 
@@ -18,27 +17,27 @@ fitted by \code{\link{OHPL}}.}
 A list of the performance metrics.
 }
 \description{
-This function makes predictions on new data and computes the
-performance evaluation metrics RMSEP, MAE, and Q2.
+Makes predictions on new data and computes the performance evaluation
+metrics RMSEP, MAE, and Q2.
 }
 \examples{
-# generate simulation data
+# Generate simulation data
 dat <- OHPL.sim(
   n = 100, p = 100, rho = 0.8,
   coef = rep(1, 10), snr = 3, p.train = 0.5,
   seed = 1010
 )
 
-# split training and test set
+# Split training and test set
 x <- dat$x.tr
 y <- dat$y.tr
 x.test <- dat$x.te
 y.test <- dat$y.te
 
-# fit the OHPL model
+# Fit the OHPL model
 fit <- OHPL(x, y, maxcomp = 3, gamma = 0.5, G = 10, type = "max")
 
-# compute evaluation metric RMSEP, Q2 and MAE for the test set
+# Compute evaluation metric RMSEP, Q2 and MAE for the test set
 perf <- OHPL.RMSEP(fit, x.test, y.test)
 perf$RMSEP
 perf$Q2

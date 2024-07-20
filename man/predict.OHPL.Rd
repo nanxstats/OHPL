@@ -2,13 +2,12 @@
 % Please edit documentation in R/predict.OHPL.R
 \name{predict.OHPL}
 \alias{predict.OHPL}
-\title{Make Predictions Based on the Fitted OHPL Model}
+\title{Make predictions based on the fitted OHPL model}
 \usage{
 \method{predict}{OHPL}(object, newx, ncomp = NULL, type = "response", ...)
 }
 \arguments{
-\item{object}{An object of class \code{OHPL}
-fitted by \code{\link{OHPL}}.}
+\item{object}{Object of class \code{OHPL} fitted by \code{\link[=OHPL]{OHPL()}}.}
 
 \item{newx}{Predictor matrix of the new data.}
 

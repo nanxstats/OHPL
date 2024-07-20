@@ -8,7 +8,7 @@ template:
 reference:
   - title: "Fit OHPL models"
     desc: >
-      Functions for fitting OHPL models.
+      Fit OHPL models.
     contents:
       - OHPL
       - FOP
@@ -17,7 +17,7 @@ reference:
       - OHPL-package
   - title: "Evaluate OHPL models"
     desc: >
-      Functions for cross-validation, prediction, performance evaluation,
+      Cross-validation, prediction, performance evaluation,
       and generation of simulated data.
     contents:
       - cv.OHPL

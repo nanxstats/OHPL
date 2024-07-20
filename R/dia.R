@@ -1,9 +1,11 @@
 dia <- function(X, i, n) {
   sapply(
     (i + 1):n,
-    function(x) sum(apply(
-      as.matrix(X[i:x, ]), 2, function(y) (sd(y))^2 * (x - i)
-    ))
+    function(x) {
+      sum(apply(
+        as.matrix(X[i:x, ]), 2, function(y) (sd(y))^2 * (x - i)
+      ))
+    }
   )
 }
 
