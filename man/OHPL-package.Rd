@@ -3,21 +3,29 @@
 \docType{package}
 \name{OHPL-package}
 \alias{OHPL-package}
-\title{Ordered Homogeneity Pursuit Lasso for Group Variable Selection}
+\title{OHPL: Ordered Homogeneity Pursuit Lasso for Group Variable Selection}
 \description{
-OHPL implements the ordered homogeneity pursuit lasso (OHPL)
-algorithm for group variable selection proposed in Lin et al. (2017)
-<\href{https://doi.org/10.1016/j.chemolab.2017.07.004}{DOI:10.1016/j.chemolab.2017.07.004}>.
-The OHPL method takes the homogeneity structure in high-dimensional data
-into account and enjoys the grouping effect to select groups of
-important variables automatically. This feature makes it particularly
-useful for high-dimensional datasets with strongly correlated variables,
-such as spectroscopic data.
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
+Ordered homogeneity pursuit lasso (OHPL) algorithm for group variable selection proposed in Lin et al. (2017) \doi{10.1016/j.chemolab.2017.07.004}. The OHPL method exploits the homogeneity structure in high-dimensional data and enjoys the grouping effect to select groups of important variables automatically. This feature makes it particularly useful for high-dimensional datasets with strongly correlated variables, such as spectroscopic data.
 }
-\references{
-You-Wu Lin, Nan Xiao, Li-Li Wang, Chuan-Quan Li, and Qing-Song Xu (2017).
-Ordered homogeneity pursuit lasso for group variable selection with
-applications to spectroscopic data.
-\emph{Chemometrics and Intelligent Laboratory Systems} 168, 62-71.
-\url{https://doi.org/10.1016/j.chemolab.2017.07.004}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://ohpl.io}
+  \item \url{https://ohpl.io/doc/}
+  \item \url{https://github.com/nanxstats/OHPL}
+  \item Report bugs at \url{https://github.com/nanxstats/OHPL/issues}
 }
+
+}
+\author{
+\strong{Maintainer}: Nan Xiao \email{me@nanx.me} (\href{https://orcid.org/0000-0002-0250-5673}{ORCID})
+
+Authors:
+\itemize{
+  \item You-Wu Lin \email{lyw015813@126.com}
+}
+
+}
+\keyword{internal}
