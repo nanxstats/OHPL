@@ -56,4 +56,7 @@ library("OHPL")
 
 ## Contribute
 
-To contribute to this project, please take a look at the [Contributing Guidelines](CONTRIBUTING.md) first. Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+To contribute to this project, please take a look at the [Contributing Guidelines](https://ohpl.io/doc/CONTRIBUTING.html) first.
+Please note that the OHPL project is released with a
+[Contributor Code of Conduct](https://ohpl.io/doc/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
