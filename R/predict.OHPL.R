@@ -1,13 +1,12 @@
-#' Make Predictions Based on the Fitted OHPL Model
+#' Make predictions based on the fitted OHPL model
 #'
 #' Make predictions on new data by an OHPL model object.
 #'
-#' @param object An object of class \code{OHPL}
-#' fitted by \code{\link{OHPL}}.
+#' @param object Object of class `OHPL` fitted by [OHPL()].
 #' @param newx Predictor matrix of the new data.
 #' @param ncomp Optimal number of components.
-#' If is \code{NULL}, the optimal number of components
-#' stored in the model object will be used.
+#'   If is `NULL`, the optimal number of components
+#'   stored in the model object will be used.
 #' @param type Prediction type.
 #' @param ... Additional parameters.
 #'

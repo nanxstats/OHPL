@@ -26,4 +26,5 @@ Imports:
     glmnet,
     pls,
     mvtnorm
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

@@ -12,7 +12,7 @@
 #' Norgaard, L., Saudland, A., Wagner, J., Nielsen, J. P., Munck, L., &
 #' Engelsen, S. B. (2000). Interval partial least-squares regression (iPLS):
 #' a comparative chemometric study with an example from near-infrared
-#' spectroscopy. \emph{Applied Spectroscopy}, 54(3), 413--419.
+#' spectroscopy. _Applied Spectroscopy_, 54(3), 413--419.
 #'
 #' @examples
 #' data("beer")
@@ -50,7 +50,7 @@ NULL
 #'
 #' @references
 #' Kalivas, J. H. (1997). Two data sets of near infrared spectra.
-#' \emph{Chemometrics and Intelligent Laboratory Systems}, 37(2), 255--259.
+#' _Chemometrics and Intelligent Laboratory Systems_, 37(2), 255--259.
 #'
 #' @examples
 #' data("wheat")
@@ -81,7 +81,7 @@ NULL
 #' Rinnan, R., & Rinnan, A. (2007). Application of near infrared
 #' reflectance (NIR) and fluorescence spectroscopy to analysis of
 #' microbiological and chemical properties of arctic soil.
-#' \emph{Soil biology and Biochemistry}, 39(7), 1664--1673.
+#' _Soil biology and Biochemistry_, 39(7), 1664--1673.
 #'
 #' @examples
 #' data("soil")

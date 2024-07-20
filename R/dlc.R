@@ -1,13 +1,12 @@
-#' Compute D, L, and C in the Fisher Optimal Partitions Algorithm
+#' Compute D, L, and C in the Fisher optimal partitions algorithm
 #'
-#' @param X a set of samples
-#' @param maxk maximum number of k
+#' @param X A set of samples.
+#' @param maxk Maximum number of `k`.
 #'
 #' @return The D, L, and C statistics in the
-#' Fisher optimal partitions algorithm
+#'   Fisher optimal partitions algorithm.
 #'
 #' @export dlc
-
 dlc <- function(X, maxk) {
   n <- dim(X)[1]
   D <- matrix(0, n, n)

@@ -1,5 +1,5 @@
-#' Generate Simulation Data for Benchmarking Sparse Regressions
-#' (Gaussian Response)
+#' Generate simulation data for benchmarking sparse regressions
+#' (Gaussian response)
 #'
 #' Generate simulation data (Gaussian case) following the
 #' settings in Xiao and Xu (2015).
@@ -12,14 +12,14 @@
 #' @param p.train Percentage of training set.
 #' @param seed Random seed for reproducibility.
 #'
-#' @return List of \code{x.tr}, \code{x.te}, \code{y.tr}, and \code{y.te}.
+#' @return A list containing `x.tr`, `x.te`, `y.tr`, and `y.te`.
 #'
 #' @author Nan Xiao <\url{https://nanx.me}>
 #'
 #' @references
 #' Nan Xiao and Qing-Song Xu. (2015). Multi-step adaptive elastic-net:
 #' reducing false positives in high-dimensional variable selection.
-#' \emph{Journal of Statistical Computation and Simulation} 85(18), 3755--3765.
+#' _Journal of Statistical Computation and Simulation_ 85(18), 3755--3765.
 #'
 #' @importFrom mvtnorm rmvnorm
 #' @importFrom stats rnorm
@@ -36,9 +36,9 @@
 #' dim(dat$x.tr)
 #' dim(dat$x.te)
 OHPL.sim <- function(
-  n = 100, p = 100,
-  rho = 0.8, coef = rep(1, 10), snr = 3,
-  p.train = 0.5, seed = 1001) {
+    n = 100, p = 100,
+    rho = 0.8, coef = rep(1, 10), snr = 3,
+    p.train = 0.5, seed = 1001) {
   call <- match.call()
 
   set.seed(seed)

@@ -2,19 +2,19 @@
 % Please edit documentation in R/FOP.R
 \name{FOP}
 \alias{FOP}
-\title{Fisher Optimal Partition}
+\title{Fisher optimal partition}
 \usage{
 FOP(X, k, C)
 }
 \arguments{
-\item{X}{a set of samples}
+\item{X}{A set of samples.}
 
-\item{k}{number of classes}
+\item{k}{Number of classes.}
 
-\item{C}{statistic from the output of \code{\link{dlc}}}
+\item{C}{Statistic from the output of \code{\link[=dlc]{dlc()}}.}
 }
 \value{
-index vector for each sample's classification
+Index vector for each sample's classification.
 }
 \description{
 The Fisher optimal partition algorithm.
