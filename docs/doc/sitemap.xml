@@ -1,63 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://ohpl.io/doc/404.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/index.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/FOP.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/OHPL-package.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/OHPL.RMSEP.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/OHPL.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/OHPL.sim.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/beer.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/cv.OHPL.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/dlc.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/predict.OHPL.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/proto.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/soil.html</loc>
-  </url>
-  <url>
-    <loc>https://ohpl.io/doc/reference/wheat.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://ohpl.io/doc/404.html</loc></url>
+<url><loc>https://ohpl.io/doc/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://ohpl.io/doc/CONTRIBUTING.html</loc></url>
+<url><loc>https://ohpl.io/doc/LICENSE-text.html</loc></url>
+<url><loc>https://ohpl.io/doc/authors.html</loc></url>
+<url><loc>https://ohpl.io/doc/index.html</loc></url>
+<url><loc>https://ohpl.io/doc/news/index.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/FOP.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/OHPL-package.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/OHPL.RMSEP.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/OHPL.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/OHPL.sim.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/beer.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/cv.OHPL.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/dlc.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/index.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/predict.OHPL.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/proto.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/soil.html</loc></url>
+<url><loc>https://ohpl.io/doc/reference/wheat.html</loc></url>
 </urlset>
+
