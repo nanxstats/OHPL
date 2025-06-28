@@ -1,35 +1,57 @@
 body {
-    font-family: "Lora", Palatino, Times, "Times New Roman", serif;
+    font-family: "Figtree Variable", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: #374151;
 }
 
-.row p, .row ul {
+.row p,
+.row ul {
     font-size: 1.0625rem;
     line-height: 1.875rem;
     margin-top: 1rem;
 }
 
 .title-header {
-    font-size: 1.875rem;
-    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 550;
+    color: #1f2937;
+    padding-top: 0.5rem;
 }
 
 .section-header {
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.authors, .affiliation {
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-    font-size: 1rem;
+    font-size: 1.875rem;
+    font-weight: 500;
+    color: #1f2937;
 }
 
 .authors {
+    font-size: 1.125rem;
     margin-bottom: 0.8rem;
 }
 
+.affiliation {
+    font-size: 0.9375rem;
+    color: #4b5563;
+}
+
+.authors a,
+.affiliation a {
+    border-bottom: none;
+    transition: none;
+}
+
+.authors a:hover,
+.affiliation a:hover {
+    border-bottom: none;
+    border-bottom: 1px solid #2563eb;
+}
+
+.abstract p {
+    font-size: 1.125rem;
+}
+
 .cite-text {
-    font-size: 0.9rem;
-    line-height: 1.9rem;
+    font-size: 0.875rem;
+    line-height: 1.875rem;
     padding-top: 0.5rem;
 }
 
@@ -39,4 +61,17 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 0rem;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    border-bottom: 1px solid #bfdbfe;
+    padding-bottom: 1px;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #1d4ed8;
+    border-bottom: 1px solid #2563eb;
 }
