@@ -1,5 +1,5 @@
 body {
-    font-family: "Figtree Variable", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Google Sans Flex", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: #374151;
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 .cite-text {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     line-height: 1.875rem;
     padding-top: 0.5rem;
 }
