@@ -52,6 +52,3 @@ Nan Xiao and Qing-Song Xu. (2015). Multi-step adaptive elastic-net:
 reducing false positives in high-dimensional variable selection.
 \emph{Journal of Statistical Computation and Simulation} 85(18), 3755--3765.
 }
-\author{
-Nan Xiao \if{html}{\out{<\url{https://nanx.me}>}}
-}
