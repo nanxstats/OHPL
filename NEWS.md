@@ -1,3 +1,9 @@
+# OHPL 1.4.2
+
+## Improvements
+
+- Fixed HTML validation issues in the Rd documentation (#11).
+
 # OHPL 1.4.1
 
 ## Improvements
