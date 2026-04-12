@@ -1,0 +1,35 @@
+# The soil dataset
+
+The soil dataset contains 108 sample measurements from the wavelength
+range of 400–2500 nm (visible and near infrared spectrum) published by
+Rinnan et al.
+
+## Usage
+
+``` r
+data(soil)
+```
+
+## References
+
+Rinnan, R., & Rinnan, A. (2007). Application of near infrared
+reflectance (NIR) and fluorescence spectroscopy to analysis of
+microbiological and chemical properties of arctic soil. *Soil biology
+and Biochemistry*, 39(7), 1664–1673.
+
+## Examples
+
+``` r
+data("soil")
+
+X <- soil$x
+y <- soil$som
+n <- nrow(soil$x)
+
+set.seed(1001)
+samp.idx <- sample(1L:n, round(n * 0.7))
+X.cal <- X[samp.idx, ]
+y.cal <- y[samp.idx]
+X.test <- X[-samp.idx, ]
+y.test <- y[-samp.idx]
+```
