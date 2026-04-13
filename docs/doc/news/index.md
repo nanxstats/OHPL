@@ -2,6 +2,8 @@
 
 ## OHPL 1.4.2
 
+CRAN release: 2026-04-13
+
 ### Improvements
 
 - Fixed HTML validation issues in the Rd documentation
